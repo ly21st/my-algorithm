@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/bitly/go-simplejson" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/buger/jsonparser" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/cihub/seelog" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/github.com/easierway/concurrent_map" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/easierway/g_met" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/hashicorp/consul" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/julienschmidt/httprouter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/golang.org/x/net" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/golang.org/x/sys" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/golang.org/x/time" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/golang.org/x/tools" vcs="Git" />
   </component>
 </project>
