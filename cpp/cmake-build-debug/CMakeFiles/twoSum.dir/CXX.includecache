@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/liyuan-github/my-algorithm/cpp/twoSum.cpp
+iostream
+-
+vector
+-
+map
+-
+unordered_map
+-
+algorithm
+-
+
