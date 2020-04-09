@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/twoSum.dir/twoSum.cpp.obj"
-  "twoSum.pdb"
+  "libtwoSum.dll.a"
   "twoSum.exe"
   "twoSum.exe.manifest"
-  "libtwoSum.dll.a"
+  "twoSum.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

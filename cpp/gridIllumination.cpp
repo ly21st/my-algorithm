@@ -125,205 +125,205 @@ using namespace std;
 
 
 
+// struct VectorHash {
+//     size_t operator()(const std::vector<int>& v) const {
+//         std::hash<int> hasher;
+//         size_t seed = 0;
+//         for (int i : v) {
+//             seed ^= hasher(i) + 0x9e3779b9 + (seed<<6) + (seed>>2);
+//         }
+//         return seed;
+//     }
+// };
+
+// class Solution {
+// public:
+//     int direction[8][2] = {
+//                 {-1, -1},
+//                 {-1, 0},
+//                 {-1, 1},
+//                 {0, -1},
+//                 {0, 1},
+//                 {1, -1},
+//                 {1, 0},
+//                 {1, 1}
+//         };
+//     vector<int> gridIllumination(int N, vector<vector<int>>& lamps, vector<vector<int>>& queries) {
+//         unordered_set<vector<int>, VectorHash> lamps_set;
+//         vector<int> result;
+//         for (auto first = lamps.begin(); first != lamps.end(); first++) {
+//             lamps_set.insert(*first);
+//         }
+//         auto queries_size = queries.size();
+//         for (auto m = 0; m < queries_size; m++) {
+//             auto i = queries[m][0];
+//             auto j = queries[m][1];
+//             auto b = is_ligthed(lamps_set, i, j);
+//             if (b) {
+//                 result.push_back(1);
+//             } else {
+//                 result.push_back(0);
+//             }
+//             if (m != queries_size-1) {
+//                 light_off(N, lamps_set, i, j);
+//             }
+//         }
+//         return result;
+//     }
+
+//     bool is_ligthed(unordered_set<vector<int>, VectorHash>& lamps, int x, int y) {
+//         for (auto first = lamps.begin(); first != lamps.end(); first++) {
+//             auto i = (*first)[0];
+//             auto j = (*first)[1];
+//             if (x == i || y == j || (y-j)==(x-i) || (y-j)== (i-x)) {
+//                 return true;
+//             }
+//         }
+//         return false;
+//     }
+
+//     void light_off(int N, unordered_set<vector<int>, VectorHash> &lamps_set, int x, int y) {
+//         lamps_set.erase(vector<int>{x, y});
+
+//         for (auto i=0; i < 8; i++) {
+//             auto ii = x + direction[i][0];
+//             auto jj = y + direction[i][1];
+//             if (ii>=0 && ii<N && jj >= 0 && jj<N) {
+//                 lamps_set.erase(vector<int>{ii, jj});
+//             }
+//         }
+//     }
+// };
+
+
+
 struct VectorHash {
-    size_t operator()(const std::vector<int>& v) const {
-        std::hash<int> hasher;
-        size_t seed = 0;
-        for (int i : v) {
-            seed ^= hasher(i) + 0x9e3779b9 + (seed<<6) + (seed>>2);
-        }
-        return seed;
-    }
+   size_t operator()(const std::vector<int>& v) const {
+       std::hash<int> hasher;
+       size_t seed = 0;
+       for (int i : v) {
+           seed ^= hasher(i) + 0x9e3779b9 + (seed<<6) + (seed>>2);
+       }
+       return seed;
+   }
 };
 
 class Solution {
 public:
-    int direction[8][2] = {
-                {-1, -1},
-                {-1, 0},
-                {-1, 1},
-                {0, -1},
-                {0, 1},
-                {1, -1},
-                {1, 0},
-                {1, 1}
-        };
-    vector<int> gridIllumination(int N, vector<vector<int>>& lamps, vector<vector<int>>& queries) {
-        unordered_set<vector<int>, VectorHash> lamps_set;
-        vector<int> result;
-        for (auto first = lamps.begin(); first != lamps.end(); first++) {
-            lamps_set.insert(*first);
-        }
-        auto queries_size = queries.size();
-        for (auto m = 0; m < queries_size; m++) {
-            auto i = queries[m][0];
-            auto j = queries[m][1];
-            auto b = is_ligthed(lamps_set, i, j);
-            if (b) {
-                result.push_back(1);
-            } else {
-                result.push_back(0);
-            }
-            if (m != queries_size-1) {
-                light_off(N, lamps_set, i, j);
-            }
-        }
-        return result;
-    }
+   int direction[8][2] = {
+           {-1, -1},
+           {-1, 0},
+           {-1, 1},
+           {0, -1},
+           {0, 1},
+           {1, -1},
+           {1, 0},
+           {1, 1}
+   };
 
-    bool is_ligthed(unordered_set<vector<int>, VectorHash>& lamps, int x, int y) {
-        for (auto first = lamps.begin(); first != lamps.end(); first++) {
-            auto i = (*first)[0];
-            auto j = (*first)[1];
-            if (x == i || y == j || (y-j)==(x-i) || (y-j)== (i-x)) {
-                return true;
-            }
-        }
-        return false;
-    }
+   vector<int> gridIllumination(int N, vector<vector<int>>& lamps, vector<vector<int>>& queries) {
+       vector<vector<int>> vec(N, vector<int>(N, 0));
+       unordered_set<vector<int>, VectorHash> lamps_set;
+       vector<int> result;
 
-    void light_off(int N, unordered_set<vector<int>, VectorHash> &lamps_set, int x, int y) {
-        lamps_set.erase(vector<int>{x, y});
+       // 把亮着的灯放进一个集合
+       for (auto first = lamps.begin(); first != lamps.end(); first++) {
+           lamps_set.insert(*first);
+       }
+       // 点亮所有灯
+       light_up(N, vec, lamps, true);
+       print(N, vec);
 
-        for (auto i=0; i < 8; i++) {
-            auto ii = x + direction[i][0];
-            auto jj = y + direction[i][1];
-            if (ii>=0 && ii<N && jj >= 0 && jj<N) {
-                lamps_set.erase(vector<int>{ii, jj});
-            }
-        }
-    }
+       auto queries_size = queries.size();
+       for (auto m = 0; m < queries_size; m++) {
+           auto i = queries[m][0];
+           auto j = queries[m][1];
+           auto b = is_ligthed(N, vec, i, j);
+           if (b) {
+               result.push_back(1);
+           } else {
+               result.push_back(0);
+           }
+           if (m != queries_size-1) {
+               light_off(N, vec, lamps_set, i, j);
+           }
+       }
+       return result;
+   }
+
+   void light_up(int N, vector<vector<int>> &vec, vector<vector<int>>& lamps, bool up_flag) {
+       for (auto first = lamps.begin(); first != lamps.end(); first++) {
+           auto i = (*first)[0];
+           auto j = (*first)[1];
+           light_one_up_or_off(N, vec, i, j, true);
+       }
+   }
+
+   void light_one_up_or_off(int N, vector<vector<int>> &vec, int i, int j, bool up_flag) {
+       int n;
+       if (up_flag) {
+           n = 1;
+       } else {
+           n = -1;
+       }
+       vec[i][j] += n;
+       // 点亮同一行的所有灯
+       for (auto jj = 0; jj < N; jj++) {
+           if (jj != j)
+               vec[i][jj] += n;
+       }
+       // 点亮同一列的所有灯
+       for (auto ii=0; ii < N; ii++) {
+           if (ii != i) {
+               vec[ii][j] += n;
+           }
+       }
+       //
+       for (auto ii=i-1, jj=j-1; ii>=0 && jj>=0; ii--, jj--) {
+           vec[ii][jj] += n;
+       }
+       for (auto ii=i+1, jj=j+1; ii<N && jj<N; ii++, jj++) {
+           vec[ii][jj] += n;
+       }
+       for (auto ii=i-1, jj=j+1; ii>=0 && jj<N; ii--, jj++) {
+           vec[ii][jj] += n;
+       }
+       for (auto ii=i+1, jj=j-1; ii<N && jj>=0; ii++, jj--) {
+           vec[ii][jj] += n;
+       }
+   }
+
+   bool is_ligthed(int N, vector<vector<int>> &vec, int x, int y) {
+       if (vec[x][y] > 0) return true;
+       else return false;
+   }
+
+   void light_off(int N, vector<vector<int>> &vec, unordered_set<vector<int>, VectorHash> &lamps_set, int x, int y) {
+       auto size = lamps_set.erase(vector<int>{x, y});
+       if (size > 0) {
+           light_one_up_or_off(N, vec, x, y, false);
+       }
+       for (auto i=0; i < 8; i++) {
+           auto ii = x + direction[i][0];
+           auto jj = y + direction[i][1];
+           if (ii>=0 && ii<N && jj >= 0 && jj<N) {
+               auto size = lamps_set.erase(vector<int>{ii, jj});
+               if (size > 0) {
+                   light_one_up_or_off(N, vec, ii, jj, false);
+               }
+           }
+       }
+   }
+
+   void print(int N, vector<vector<int>> &vec) {
+       for(auto i = 0; i < N; i++) {
+           for (auto j = 0; j < N; j++) {
+               cout<<vec[i][j]<< " ";
+           }
+           cout<<endl;
+       }
+   }
 };
-
-
-
-//struct VectorHash {
-//    size_t operator()(const std::vector<int>& v) const {
-//        std::hash<int> hasher;
-//        size_t seed = 0;
-//        for (int i : v) {
-//            seed ^= hasher(i) + 0x9e3779b9 + (seed<<6) + (seed>>2);
-//        }
-//        return seed;
-//    }
-//};
-//
-//class Solution {
-//public:
-//    int direction[8][2] = {
-//            {-1, -1},
-//            {-1, 0},
-//            {-1, 1},
-//            {0, -1},
-//            {0, 1},
-//            {1, -1},
-//            {1, 0},
-//            {1, 1}
-//    };
-//
-//    vector<int> gridIllumination(int N, vector<vector<int>>& lamps, vector<vector<int>>& queries) {
-//        vector<vector<int>> vec(N, vector<int>(N, 0));
-//        unordered_set<vector<int>, VectorHash> lamps_set;
-//        vector<int> result;
-//
-//        // 把亮着的灯放进一个集合
-//        for (auto first = lamps.begin(); first != lamps.end(); first++) {
-//            lamps_set.insert(*first);
-//        }
-//        // 点亮所有灯
-//        light_up(N, vec, lamps, true);
-//        print(N, vec);
-//
-//        auto queries_size = queries.size();
-//        for (auto m = 0; m < queries_size; m++) {
-//            auto i = queries[m][0];
-//            auto j = queries[m][1];
-//            auto b = is_ligthed(N, vec, i, j);
-//            if (b) {
-//                result.push_back(1);
-//            } else {
-//                result.push_back(0);
-//            }
-//            if (m != queries_size-1) {
-//                light_off(N, vec, lamps_set, i, j);
-//            }
-//        }
-//        return result;
-//    }
-//
-//    void light_up(int N, vector<vector<int>> &vec, vector<vector<int>>& lamps, bool up_flag) {
-//        for (auto first = lamps.begin(); first != lamps.end(); first++) {
-//            auto i = (*first)[0];
-//            auto j = (*first)[1];
-//            light_one_up_or_off(N, vec, i, j, true);
-//        }
-//    }
-//
-//    void light_one_up_or_off(int N, vector<vector<int>> &vec, int i, int j, bool up_flag) {
-//        int n;
-//        if (up_flag) {
-//            n = 1;
-//        } else {
-//            n = -1;
-//        }
-//        vec[i][j] += n;
-//        // 点亮同一行的所有灯
-//        for (auto jj = 0; jj < N; jj++) {
-//            if (jj != j)
-//                vec[i][jj] += n;
-//        }
-//        // 点亮同一列的所有灯
-//        for (auto ii=0; ii < N; ii++) {
-//            if (ii != i) {
-//                vec[ii][j] += n;
-//            }
-//        }
-//        //
-//        for (auto ii=i-1, jj=j-1; ii>=0 && jj>=0; ii--, jj--) {
-//            vec[ii][jj] += n;
-//        }
-//        for (auto ii=i+1, jj=j+1; ii<N && jj<N; ii++, jj++) {
-//            vec[ii][jj] += n;
-//        }
-//        for (auto ii=i-1, jj=j+1; ii>=0 && jj<N; ii--, jj++) {
-//            vec[ii][jj] += n;
-//        }
-//        for (auto ii=i+1, jj=j-1; ii<N && jj>=0; ii++, jj--) {
-//            vec[ii][jj] += n;
-//        }
-//    }
-//
-//    bool is_ligthed(int N, vector<vector<int>> &vec, int x, int y) {
-//        if (vec[x][y] > 0) return true;
-//        else return false;
-//    }
-//
-//    void light_off(int N, vector<vector<int>> &vec, unordered_set<vector<int>, VectorHash> &lamps_set, int x, int y) {
-//        auto size = lamps_set.erase(vector<int>{x, y});
-//        if (size > 0) {
-//            light_one_up_or_off(N, vec, x, y, false);
-//        }
-//        for (auto i=0; i < 8; i++) {
-//            auto ii = x + direction[i][0];
-//            auto jj = y + direction[i][1];
-//            if (ii>=0 && ii<N && jj >= 0 && jj<N) {
-//                auto size = lamps_set.erase(vector<int>{ii, jj});
-//                if (size > 0) {
-//                    light_one_up_or_off(N, vec, ii, jj, false);
-//                }
-//            }
-//        }
-//    }
-//
-//    void print(int N, vector<vector<int>> &vec) {
-//        for(auto i = 0; i < N; i++) {
-//            for (auto j = 0; j < N; j++) {
-//                cout<<vec[i][j]<< " ";
-//            }
-//            cout<<endl;
-//        }
-//    }
-//};
 
 
 

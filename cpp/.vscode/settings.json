@@ -46,6 +46,7 @@
         "iterator": "cpp",
         "numeric": "cpp",
         "thread": "cpp",
-        "future": "cpp"
+        "future": "cpp",
+        "unordered_set": "cpp"
     }
 }

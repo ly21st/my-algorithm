@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/merge.dir/merge.cpp.obj"
-  "merge.pdb"
+  "libmerge.dll.a"
   "merge.exe"
   "merge.exe.manifest"
-  "libmerge.dll.a"
+  "merge.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

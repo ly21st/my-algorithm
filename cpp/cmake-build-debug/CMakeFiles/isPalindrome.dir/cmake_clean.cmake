@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/isPalindrome.dir/isPalindrome.cpp.obj"
-  "isPalindrome.pdb"
   "isPalindrome.exe"
   "isPalindrome.exe.manifest"
+  "isPalindrome.pdb"
   "libisPalindrome.dll.a"
 )
 

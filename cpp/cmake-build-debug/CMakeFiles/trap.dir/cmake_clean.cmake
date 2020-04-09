@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/trap.dir/trap.cpp.obj"
-  "trap.pdb"
+  "libtrap.dll.a"
   "trap.exe"
   "trap.exe.manifest"
-  "libtrap.dll.a"
+  "trap.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/gridIllumination2.dir/gridIllumination2.cpp.obj"
-  "gridIllumination2.pdb"
   "gridIllumination2.exe"
   "gridIllumination2.exe.manifest"
+  "gridIllumination2.pdb"
   "libgridIllumination2.dll.a"
 )
 

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MyCircularDeque.dir/MyCircularDeque.cpp.obj"
-  "MyCircularDeque.pdb"
   "MyCircularDeque.exe"
   "MyCircularDeque.exe.manifest"
+  "MyCircularDeque.pdb"
   "libMyCircularDeque.dll.a"
 )
 
