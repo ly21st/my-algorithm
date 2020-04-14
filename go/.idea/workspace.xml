@@ -2,85 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="764127ff-dcda-49af-9660-074043b61054" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../cpp/.idea/leetcode/editor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cpp/leetcode/editor/cn/[283]移动零.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetcode/leetcode/editor/cn/[11]盛最多水的容器.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetcode/leetcode/editor/cn/[283]移动零.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetcode/leetcode/editor/cn/all.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetcode/leetcode/editor/cn/translation.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetcode/leetcode/移动零/MoveZeroes_283.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python-pycharm/.idea/python.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cpp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/3.13.2/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/3.13.2/CMakeCCompiler.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/3.13.2/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/3.13.2/CMakeCXXCompiler.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/3.13.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/3.13.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/3.13.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/3.13.2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/3.13.2/CMakeRCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/3.13.2/CMakeRCCompiler.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/3.13.2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/3.13.2/CMakeSystem.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/MyCircularDeque.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/MyCircularDeque.dir/MyCircularDeque.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/MyCircularDeque.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/MyCircularDeque.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/MyCircularDeque.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/MyCircularDeque.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/MyCircularDeque.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/MyCircularDeque.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/MyCircularDeque.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/MyCircularDeque.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/MyCircularDeque.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/MyCircularDeque.dir/objects.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/gridIllumination.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/gridIllumination.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/gridIllumination.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/gridIllumination.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/gridIllumination.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/gridIllumination.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/gridIllumination.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/gridIllumination.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/gridIllumination.dir/gridIllumination.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/gridIllumination.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/gridIllumination.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/gridIllumination.dir/objects.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/gridIllumination2.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/gridIllumination2.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/gridIllumination2.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/gridIllumination2.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/gridIllumination2.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/gridIllumination2.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/isPalindrome.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/isPalindrome.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/isPalindrome.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/isPalindrome.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/isPalindrome.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/isPalindrome.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/isPalindrome.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/isPalindrome.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/isPalindrome.dir/isPalindrome.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/isPalindrome.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/isPalindrome.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/isPalindrome.dir/objects.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/longestCommonPrefix.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/longestCommonPrefix.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/longestCommonPrefix.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/longestCommonPrefix.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/longestCommonPrefix.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/longestCommonPrefix.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/longestCommonPrefix.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/longestCommonPrefix.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/longestCommonPrefix.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/longestCommonPrefix.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/longestCommonPrefix.dir/longestCommonPrefix.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/longestCommonPrefix.dir/objects.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/merge.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/merge.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/merge.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/merge.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/merge.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/merge.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/merge.dir/merge.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/merge.dir/merge.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/merge.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/merge.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/trap.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/trap.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/trap.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/trap.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/trap.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/trap.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/trap.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/trap.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/trap.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/trap.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/trap.dir/objects.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/trap.dir/trap.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/twoSum.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/twoSum.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/twoSum.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/twoSum.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/twoSum.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/twoSum.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/twoSum.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/twoSum.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/twoSum.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/twoSum.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/twoSum.dir/objects.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/CMakeFiles/twoSum.dir/twoSum.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/cp.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/cp.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/cmake-build-debug/merge.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/cmake-build-debug/merge.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../python/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../python/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../python/.idea/python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../python/.idea/python.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../python/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../python/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-idea/my-algorithm/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-idea/my-algorithm/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-idea/my-algorithm/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-idea/my-algorithm/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-idea/my-algorithm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-idea/my-algorithm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python/.idea/python.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python/MyCircularDeque.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python/MyCircularDeque2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python/MyCircularDeque3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python/isPalindrome.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python/merge.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python/mergeTwoLists.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python/rotate.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python/venv/Scripts/Activate.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python/venv/Scripts/activate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python/venv/Scripts/activate.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python/venv/Scripts/deactivate.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python/venv/Scripts/python.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python/venv/Scripts/pythonw.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python/venv/pyvenv.cfg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,14 +55,18 @@
     <option name="useGoPathFromSystemEnvironment" value="false" />
   </component>
   <component name="ProjectId" id="1a57nXmCKOqUR56ckiwWlv9nj6l" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="GO_FMT" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
@@ -117,10 +75,19 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.vendoring.notification.had.been.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/leetcode/leetcode/editor/cn" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="leetcode.id" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\liyuan-github\my-algorithm\go\src\leetcode\leetcode\移动零" />
+      <recent name="E:\liyuan-github\my-algorithm\go\src\leetcode\leetcode" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\liyuan-github\my-algorithm\go\src\leetcode\leetcode\editor\cn" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -134,18 +101,59 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="go build merge.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Build.go build leetcode/leetcode/移动零">
+    <configuration name="go build leetcode/leetcode/移动零" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/src/leetcode/leetcode/移动零/MoveZeroes_283.go" />
+      <package value="leetcode/leetcode/移动零" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build leetcode/leetcode/editor/cn (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go" />
       <working_directory value="$PROJECT_DIR$/" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/src/leetcode/merge/merge.go" />
+      <filePath value="$PROJECT_DIR$/src/leetcode/leetcode/editor/cn/[11]盛最多水的容器.go" />
+      <package value="leetcode/leetcode/editor/cn" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build leetcode/leetcode/editor/cn (2)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/src/leetcode/leetcode/editor/cn/MoveZeroes_283.go" />
+      <package value="leetcode/leetcode/editor/cn" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build leetcode/leetcode/editor/cn" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/src/leetcode/leetcode/editor/cn/[283]移动零.go" />
+      <package value="leetcode/leetcode/editor/cn" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build leetcode/mergeTwoLists" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/src/leetcode/mergeTwoLists/mergeTwoLists.go" />
+      <package value="leetcode/mergeTwoLists" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build merge.go" />
+        <item itemvalue="Go Build.go build leetcode/leetcode/移动零" />
+        <item itemvalue="Go Build.go build leetcode/leetcode/editor/cn (2)" />
+        <item itemvalue="Go Build.go build leetcode/leetcode/editor/cn (1)" />
+        <item itemvalue="Go Build.go build leetcode/leetcode/editor/cn" />
+        <item itemvalue="Go Build.go build leetcode/mergeTwoLists" />
       </list>
     </recent_temporary>
   </component>
@@ -164,5 +172,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

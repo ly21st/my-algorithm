@@ -12,9 +12,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="logkeeper-init" target="1.8" />
       <module name="my-algorithm" target="1.8" />
-      <module name="my-alorithm" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -4,12 +4,15 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "E:/MinGW64/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32",
-                "E:/MinGW64/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward",
-                "E:/MinGW64/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include",
-                "E:/MinGW64/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/include",
-                "E:/MinGW64/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed",
-                "E:/MinGW64/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/**"
+                "E:/Program Files/LLVM/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++",
+                "E:/Program Files/LLVM/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32",
+                "E:/Program Files/LLVM/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward",
+                "E:/Program Files/LLVM/lib/gcc/x86_64-w64-mingw32/8.1.0/include",
+                "E:/Program Files/LLVM/include",
+                "E:/Program Files/LLVM/x86_64-w64-mingw32/include",
+                "E:/Program Files/LLVM/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed",
+                "E:/Program Files/LLVM/x86_64-w64-mingw32/include/*",
+                "E:/Program Files/LLVM/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/**"
             ],
             "defines": [
                 "_DEBUG",
@@ -18,20 +21,26 @@
             ],
             "browse": {
                 "path": [
+                    "E:/Program Files/LLVM/x86_64-w64-mingw32/include",
+                    "E:/Program Files/LLVM/lib/gcc/x86_64-w64-mingw32/8.1.0/include",
+                    "E:/Program Files/LLVM/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed",
+                    "E:/Program Files/LLVM/include/*",
                     "${workspaceRoot}",
                     "${workspaceFolder}/**",
-                    "E:/MinGW64/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32",
-                    "E:/MinGW64/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward",
-                    "E:/MinGW64/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include",
-                    "E:/MinGW64/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/include",
-                    "E:/MinGW64/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed",
-                    "E:/MinGW64/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/**"
-    
+                    "E:/Program Files/LLVM/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++",
+                    "E:/Program Files/LLVM/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32",
+                    "E:/Program Files/LLVM/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward",
+                    "E:/Program Files/LLVM/lib/gcc/x86_64-w64-mingw32/8.1.0/include",
+                    "E:/Program Files/LLVM/include",
+                    "E:/Program Files/LLVM/x86_64-w64-mingw32/include",
+                    "E:/Program Files/LLVM/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed",
+                    "E:/Program Files/LLVM/x86_64-w64-mingw32/include/*",
+                    "E:/Program Files/LLVM/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/**"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
             },
-            "compilerPath": "E:/MinGW64/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/gcc.exe",
+            "compilerPath": "E:\\Program Files\\LLVM\\bin\\gcc.exe",
             "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "clang-x64"
