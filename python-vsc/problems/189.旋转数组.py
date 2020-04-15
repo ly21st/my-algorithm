@@ -1,3 +1,8 @@
+# @before-stub-for-debug-begin
+from python3problem189 import *
+from typing import *
+# @before-stub-for-debug-end
+
 #
 # @lc app=leetcode.cn id=189 lang=python3
 #
@@ -19,16 +24,33 @@ class Solution:
         if not k:
             return 
 
-        self.rotate_aux(nums, 0, nums_len - k, nums_len)
-
-
+        n = self._gcd(nums_len, nums_len - k)
+        while n > 0:
+            n -=1
+            self._rotate(nums, nums_len, n, nums_len - k)
+            
 
     def _gcd(self, m: int, n: int):
-        while m != 0:
-            t = n % m
-            n = m 
-            m = t
-        return n
+        while n != 0:
+            t = m % n;
+            m = n
+            n = t
+        return m
+
+    def _rotate(self, nums: List[int], last: int, initial: int, diff: int):
+        tmp = nums[initial]
+        ptr1 = initial
+        ptr2 = ptr1 + diff
+        while ptr2 != initial:
+            nums[ptr1] = nums[ptr2]
+            ptr1 = ptr2
+            if ptr2 + diff < last:
+                ptr2 = ptr2 + diff
+            else:
+                ptr2 = diff - (last - ptr2)
+        nums[ptr1] = tmp
+
+
 
 # @lc code=end
 
@@ -126,3 +148,4 @@ class Solution:
 #             self.rotate_aux(nums, i, j, last)
 #         else:
 #             self.rotate_aux(nums, i, middle, last)
+
