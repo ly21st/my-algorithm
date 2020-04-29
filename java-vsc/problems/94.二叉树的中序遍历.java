@@ -24,6 +24,7 @@ import javax.swing.tree.TreeNode;
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
+        if (root == null) return res;
         Deque<TreeNode> deque =new LinkedList<>();
         deque.add(root);
         TreeNode node = root;
