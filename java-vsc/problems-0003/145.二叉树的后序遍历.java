@@ -37,12 +37,17 @@ class Solution {
                 deque.add(cur);
                 cur = cur.left;
             }
+            
             cur = deque.peekFirst();
+            System.out.println("cur.peekFirst:" + cur.val);
             if (cur.right != null) {
-                deque.addFirst(cur.right);
-               
+               cur = cur.right;
+               continue;
             } 
-            cur = cur.right;
+            System.out.println("cur, removeFirst:" + cur.val);
+            cur = deque.removeFirst();
+            res.add(cur.val);
+            cur = null;
         }
     }
 }
