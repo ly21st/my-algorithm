@@ -130,7 +130,7 @@ class Solution {
 
 
 
-// 迭代法，不破坏原来的数据结构
+// 莫里斯遍历，不破坏原来的数据结构
 // class Solution {
 //     public List<Integer> inorderTraversal(TreeNode root) {
 //         List<Integer> res = new ArrayList<Integer>();
@@ -240,29 +240,29 @@ class Solution {
 
 
 // 颜色遍历法
-// class Solution {
-//     public List<Integer> inorderTraversal(TreeNode root) {
-//         List<Integer> res = new ArrayList<Integer>();
-//         if (root == null) return res;
-//         Deque<Pair<Integer, TreeNode>> deque = new LinkedList<>();
-//         deque.addFirst(new Pair<Integer, TreeNode>(0, root));
-//         Pair<Integer, TreeNode> cur;
-//         TreeNode node;
-//         while (!deque.isEmpty()) {
-//             cur = deque.removeFirst();
-//             node = cur.getValue();
-//             if (cur.getKey() == 1) {
-//                 res.add(node.val);
-//                 continue;
-//             }
-//             if (node.right != null) {
-//                 deque.addFirst(new Pair<Integer, TreeNode>(0, node.right));
-//             }
-//             deque.addFirst(new Pair<Integer, TreeNode>(1, node));
-//             if (node.left != null) {
-//                 deque.addFirst(new Pair<Integer, TreeNode>(0, node.left));
-//             }
-//         }
-//         return res;
-//     }
-// }
+class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<Integer>();
+        if (root == null) return res;
+        Deque<Pair<Integer, TreeNode>> deque = new LinkedList<>();
+        deque.addFirst(new Pair<Integer, TreeNode>(0, root));
+        Pair<Integer, TreeNode> cur;
+        TreeNode node;
+        while (!deque.isEmpty()) {
+            cur = deque.removeFirst();
+            node = cur.getValue();
+            if (cur.getKey() == 1) {
+                res.add(node.val);
+                continue;
+            }
+            if (node.right != null) {
+                deque.addFirst(new Pair<Integer, TreeNode>(0, node.right));
+            }
+            deque.addFirst(new Pair<Integer, TreeNode>(1, node));
+            if (node.left != null) {
+                deque.addFirst(new Pair<Integer, TreeNode>(0, node.left));
+            }
+        }
+        return res;
+    }
+}

@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 import javax.swing.tree.TreeNode;
 
@@ -23,32 +24,30 @@ import javax.swing.tree.TreeNode;
  */
 class Solution {
     public List<Integer> postorderTraversal(TreeNode root) {
-        List<Integer> res = new ArrayList<Integer>();
+        LinkedList<Integer> res = new LinkedList<Integer>();
         helper(root, res);
         return res;
     }
 
-    public void helper(TreeNode root, List<Integer> res) {
+    public void helper(TreeNode root, LinkedList<Integer> res) {
         if (root == null) return;
         Deque<TreeNode> deque = new LinkedList<TreeNode>();
         TreeNode cur = root;
+
         while (cur != null || !deque.isEmpty()) {
             while (cur != null) {
-                deque.add(cur);
+                deque.addFirst(cur);
                 cur = cur.left;
             }
-            
-            cur = deque.peekFirst();
-            System.out.println("cur.peekFirst:" + cur.val);
-            if (cur.right != null) {
-               cur = cur.right;
-               continue;
-            } 
-            System.out.println("cur, removeFirst:" + cur.val);
-            cur = deque.removeFirst();
-            res.add(cur.val);
-            cur = null;
-        }
+            TreeNode tmp = deque.peekFirst();
+            if (tmp.right == null) {
+                deque.removeFirst();
+                res.add(tmp.val);
+                continue;
+            }
+            cur = tmp.right;
+            tmp.right = null;
+        }  
     }
 }
 // @lc code=end
@@ -110,5 +109,36 @@ class Solution {
 //                 cur.left = null;
 //             }
 //         }
+//     }
+// }
+
+
+
+
+
+
+// 根右左逆序遍历，再反转
+// class Solution {
+//     public List<Integer> postorderTraversal(TreeNode root) {
+//         LinkedList<Integer> res = new LinkedList<Integer>();
+//         helper(root, res);
+//         return res;
+//     }
+
+//     public void helper(TreeNode root, LinkedList<Integer> res) {
+//         if (root == null) return;
+//         Deque<TreeNode> deque = new LinkedList<TreeNode>();
+//         deque.addFirst(root);
+//         TreeNode cur;
+//         while (!deque.isEmpty()) {
+//             cur = deque.removeFirst();
+//             res.addFirst(cur.val);
+//             if (cur.left != null) {
+//                 deque.addFirst(cur.left);
+//             }
+//             if (cur.right != null) {
+//                 deque.addFirst(cur.right);
+//             }
+//         }  
 //     }
 // }
