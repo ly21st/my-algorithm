@@ -3,6 +3,8 @@ import java.util.LinkedList;
 
 import javax.swing.tree.TreeNode;
 
+import sun.launcher.resources.launcher;
+
 /*
  * @lc app=leetcode.cn id=98 lang=java
  *
@@ -70,15 +72,20 @@ class Solution {
 
     public boolean helper(TreeNode root) {
         Deque<TreeNode> deque = new LinkedList<>();
-        deque.addFirst(new TreeNode);
+        double preVal = Double.MIN_VALUE;
         TreeNode cur = root;
         while (cur != null || !deque.isEmpty()) {
             while (cur != null) {
                 deque.addFirst(cur);
                 cur = cur.left;
             }
+            cur = deque.removeFirst();
+            if (cur.val <= preVal) return false;
+            preVal = cur.val;
+            cur = cur.right;
         }
-        
+        return true;
+    }
 }
 // @lc code=end
 
