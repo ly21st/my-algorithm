@@ -1,3 +1,7 @@
+import java.util.Arrays;
+import java.util.Deque;
+import java.util.LinkedList;
+
 /*
  * @lc app=leetcode.cn id=297 lang=java
  *
@@ -52,62 +56,136 @@ public class Codec {
 
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
-        if (root == null) return "";
-        int depth = depth(root);
-        int size = (int)Math.pow(2, depth) - 1;
-        String []arr = new String[size];
-        dfsSerialize(root, arr, 0, size - 1);
-        String res = arrToString(arr, size);
-        System.out.println("res:" + res);
-        return res;
+        if (root == null) return "null,";
+        String s = serializeDfs(root);
+    //    System.out.println("s:" + s);
+        return s;
+    }
+
+    public String serializeDfs(TreeNode root) {
+        if (root == null) return "null,";
+        String s;
+        s = String.valueOf(root.val) + ",";
+        s += serializeDfs(root.left);
+        s += serializeDfs(root.right);
+        return s;
     }
 
     // Decodes your encoded data to tree.
     public TreeNode deserialize(String data) {
-        return null;
+        String []arr = data.split(",");
+        LinkedList<String> list = new LinkedList<String>(Arrays.asList(arr));
+        return deserializeDfs(list);
     }
 
-    int depth(TreeNode root) {
-        if (root == null) return 0;
-        int leftDept = depth(root.left);
-        int rightDepth = depth(root.right);
-        return Math.max(leftDept, rightDepth) + 1;
-    }
-
-    public void dfsSerialize(TreeNode root, String[] arr, int index, int maxIndex) {
-        if (root == null) return;
-        if (index > maxIndex) return;
-        arr[index] = String.valueOf(root.val);
-        if (root.left != null) {
-            dfsSerialize(root.left, arr, 2 * index + 1, maxIndex);
-        }
-        if (root.right != null) {
-            dfsSerialize(root.right, arr, 2 * index + 2, maxIndex);
-        }
-    }
-
-    public String arrToString(String[] arr, int n) {
-        StringBuffer sb = new StringBuffer();
-        sb.append("[");
-        while (n > 1 && arr[n-1] == null) n--;
-        for (int i = 0; i < n; i++) {
-            if (i == 0) {
-                sb.append(arr[i]);
-                continue;
-            } 
-            if (arr[i] == null) {
-                sb.append(",null");
-            } else {
-                sb.append(",").append(arr[i]);
-            }
-        }
-        sb.append("]");
-        return sb.toString();
+    public TreeNode deserializeDfs(LinkedList<String> list) {
+        if (list.isEmpty()) return null;
+        String s = list.removeFirst();
+        if (s.equals("null")) return null;
+        TreeNode node = new TreeNode(Integer.valueOf(s));
+        node.left = deserializeDfs(list);
+        node.right = deserializeDfs(list);
+        return node;
     }
 }
-
 // Your Codec object will be instantiated and called as such:
 // Codec codec = new Codec();
 // codec.deserialize(codec.serialize(root));
 // @lc code=end
 
+
+
+// 使用完全二叉树的方法
+// public class Codec {
+
+//     // Encodes a tree to a single string.
+//     public String serialize(TreeNode root) {
+//         if (root == null) return "";
+//         int depth = depth(root);
+//         int size = (int)Math.pow(2, depth) - 1;
+//         String []arr = new String[size];
+//         dfsSerialize(root, arr, 0, size - 1);
+//         String res = arrToString(arr, size);
+//     //    System.out.println("res:" + res);
+//         return res;
+//     }
+
+//     // Decodes your encoded data to tree.
+//     public TreeNode deserialize(String data) {
+//         if ("[]".equals(data)) return null;
+//         String []arr;
+//         arr = stringToArr(data);
+//         TreeNode root;
+//         root = arrToTreeNode(arr);
+//         return root;
+//     }
+
+//     int depth(TreeNode root) {
+//         if (root == null) return 0;
+//         int leftDept = depth(root.left);
+//         int rightDepth = depth(root.right);
+//         return Math.max(leftDept, rightDepth) + 1;
+//     }
+
+//     public void dfsSerialize(TreeNode root, String[] arr, int index, int maxIndex) {
+//         if (root == null) return;
+//         if (index > maxIndex) return;
+//         arr[index] = String.valueOf(root.val);
+//         if (root.left != null) {
+//             dfsSerialize(root.left, arr, 2 * index + 1, maxIndex);
+//         }
+//         if (root.right != null) {
+//             dfsSerialize(root.right, arr, 2 * index + 2, maxIndex);
+//         }
+//     }
+
+//     public String arrToString(String[] arr, int n) {
+//         StringBuffer sb = new StringBuffer();
+//         sb.append("[");
+//         while (n > 1 && arr[n-1] == null) n--;
+//         for (int i = 0; i < n; i++) {
+//             if (i == 0) {
+//                 sb.append(arr[i]);
+//                 continue;
+//             } 
+//             if (arr[i] == null) {
+//                 sb.append(",null");
+//             } else {
+//                 sb.append(",").append(arr[i]);
+//             }
+//         }
+//         sb.append("]");
+//         return sb.toString();
+//     }
+
+//     public String[] stringToArr(String s) {
+//         int len = s.length();
+//         String dstStr = s.substring(1, len - 1);
+//         return dstStr.split(",");
+//     }
+
+//     public TreeNode arrToTreeNode(String[] arr) {
+//         TreeNode root = new TreeNode(Integer.valueOf(arr[0]));
+//         int len = arr.length;
+//         arrToTreeNodeDfs(root, arr, len, 0);
+//         return root;
+//     }
+
+//     public void arrToTreeNodeDfs(TreeNode root, String[] arr, int n, int index) {
+//         // 没有子节点
+//         if (2 * index + 1 >= n) return;
+//         if (2 * index + 2 < n && arr[2*index+1].equals("null") && arr[2*index+2].equals("null")) return;
+        
+//         if (!arr[2*index+1].equals("null")) {
+//             TreeNode node = new TreeNode(Integer.valueOf(arr[2*index+1]));
+//             root.left = node;
+//             arrToTreeNodeDfs(root.left, arr, n, 2 * index + 1);
+//         }
+
+//         if (2 * index + 2 < n && !arr[2*index+2].equals("null")) {
+//             TreeNode node = new TreeNode(Integer.valueOf(arr[2*index+2]));
+//             root.right = node;
+//             arrToTreeNodeDfs(root.right, arr, n, 2 * index + 2);
+//         }
+//     }
+// }
