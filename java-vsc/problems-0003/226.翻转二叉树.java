@@ -55,6 +55,7 @@ import javax.swing.tree.TreeNode;
  *     TreeNode(int x) { val = x; }
  * }
  */
+// 循环迭代法
 class Solution {
     public TreeNode invertTree(TreeNode root) {
         if (root == null) return null;

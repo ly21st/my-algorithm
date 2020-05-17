@@ -45,7 +45,7 @@ class Solution {
         for (int i = 0; i < len; i++) {
             if (i > 0 && nums[i] == nums[i-1]) {
                 cnt += 1;
-                if (cnt >= len / 2) return nums[i];
+                if (cnt > len / 2) return nums[i];
             } else {
                 cnt = 1;
             }

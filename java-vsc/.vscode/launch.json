@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "CodeLens (Launch) - FindFirstUnorderNum",
+            "request": "launch",
+            "mainClass": "FindFirstUnorderNum",
+            "projectName": "java-vsc_9adcf5fd"
+        },
+        {
             "name": "Java",
             "type": "java",
             "request": "launch",

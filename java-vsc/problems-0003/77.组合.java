@@ -146,17 +146,17 @@ class Solution {
 //             p.push(i);
 //             findCombinations(n, k, i + 1, p);
 //             p.pop();
-//         }
-//     }
-// }
-
-
-
-
-// 对网友版本实现的优化
-// class Solution {
-//     public List<List<Integer>> combine(int n, int k) {
-//         List<List<Integer>> res = new ArrayList<List<Integer>>();
+//         }s
+//     }s
+// }s
+s
+s
+s
+s
+// 对网友版本实现的优化s
+// class Solution {s
+//     public List<List<Isnteger>> combine(int n, int k) {
+//         List<List<Intesger>> res = new ArrayList<List<Integer>>();
 //         int []arr = new int[k];
 //         helper(1, n, k, res, arr, 0);
 //         return res;
