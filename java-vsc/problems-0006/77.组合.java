@@ -1,4 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 /*
  * @lc app=leetcode.cn id=77 lang=java
@@ -43,12 +46,15 @@ class Solution {
 
     public void helper(int start, int end, int k, int first, int[] output, List<List<Integer>> res) {
         if (first == k) {
-            List<Integer> list = new ArrayList<Integer>(output);
+            List<Integer> list = new ArrayList<Integer>();
+            for (int v : output) {
+                list.add(v);
+            }
             res.add(list);
             return;
         }
-        int left = k - output.length;
-        for (int i = start; i <= n - left + 1; i++) {
+
+        for (int i = start; i <= end - (k - first) + 1; i++) {
             output[first] = i;
             helper(i + 1, end, k, first + 1, output, res);
         }
@@ -56,3 +62,29 @@ class Solution {
 }
 // @lc code=end
 
+
+// 方法1
+// class Solution {
+//     public List<List<Integer>> combine(int n, int k) {
+//         List<List<Integer>> res = new ArrayList<List<Integer>>();
+//         int []output = new int[k];
+//         helper(1, n, k, 0, output, res);
+//         return res;
+//     }
+
+//     public void helper(int start, int end, int k, int first, int[] output, List<List<Integer>> res) {
+//         if (first == k) {
+//             List<Integer> list = new ArrayList<Integer>();
+//             for (int v : output) {
+//                 list.add(v);
+//             }
+//             res.add(list);
+//             return;
+//         }
+    
+//         for (int i = start; i <= end; i++) {
+//             output[first] = i;
+//             helper(i + 1, end, k, first + 1, output, res);
+//         }
+//     }
+// }
