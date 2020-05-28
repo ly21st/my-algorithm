@@ -68,10 +68,11 @@ import javafx.util.Pair;
  */
 
 // @lc code=start
+// 双向队列，官方版本仿写
 class Solution {
     int L = 0;
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
-        Set<String> visited = new HashSet<String>();
+        if (!wordList.contains(endWord)) return 0;
         Map<String, List<String>> allMap = new HashMap<String, List<String>>();
         L = beginWord.length();
         for (String word : wordList) {
@@ -82,40 +83,56 @@ class Solution {
                 allMap.put(s, list);
             }
         }
-        return helper(beginWord, endWord, visited, 0, allMap);
+        return helper(beginWord, endWord, allMap);
     }
 
-    public int helper(String beginWord, String endWord, Set<String> visited, int level, 
+    public int helper(String beginWord, String endWord, 
             Map<String, List<String>> allMap) {
-        LinkedList<String> deque = new LinkedList<String>();
-        deque.addLast(beginWord);
-        while (!deque.isEmpty()) {
-            int size = deque.size();
-            level++;
-            Set<String> subVisited = new HashSet<String>();
-            for (int i = 0; i < size; i++) {
-                String curWord = deque.removeFirst();
-                for (int j = 0; j < L; j++) {
-                    String s = curWord.substring(0, j) + "*" + curWord.substring(j + 1, L);
-                    List<String> list = allMap.getOrDefault(s, new ArrayList<String>());
-                    for (String word : list) {
-                        if (word.equals(endWord)) return level + 1;
-                        if (!visited.contains(word)) {
-                            deque.add(word);
-                            subVisited.add(word);
-                        }
-                    }
+        LinkedList<Pair<String, Integer>> deque1 = new LinkedList<Pair<String, Integer>>();
+        deque1.addLast(new Pair<String, Integer>(beginWord, 1));
+        Map<String, Integer> visited = new HashMap<String, Integer>();
+        visited.put(beginWord, 1);
+        LinkedList<Pair<String, Integer>> deque2 = new LinkedList<Pair<String, Integer>>();
+        deque2.addLast(new Pair<String, Integer>(endWord, 1));
+        Map<String, Integer> otherVisited = new HashMap<String, Integer>();
+        otherVisited.put(endWord, 1);
+
+        while (!deque1.isEmpty() && !deque2.isEmpty()) {
+            int level;
+            level = visitedInQeque(deque1, visited, otherVisited, allMap);
+            if (level > 0) return level;
+            level =  visitedInQeque(deque2, otherVisited, visited, allMap);
+            if (level > 0) return level;
+        }    
+        return 0;
+    }
+
+    public int visitedInQeque(LinkedList<Pair<String, Integer>> deque, 
+                            Map<String, Integer> visited, Map<String, Integer> otherVisited,
+                            Map<String, List<String>> allMap) {
+        Pair<String, Integer> p = deque.removeFirst();
+        String key = p.getKey();
+        int level = p.getValue();
+        for (int j = 0; j < L; j++) {
+            String s = key.substring(0, j) + "*" + key.substring(j + 1, L);
+            List<String> list = allMap.getOrDefault(s, new ArrayList<String>());
+            for (String word : list) {
+                if (otherVisited.containsKey(word)) {
+                    return level + (int)otherVisited.get(word);
+                }
+                if (!visited.containsKey(word)) {
+                    deque.addLast(new Pair<String, Integer>(word, level + 1));
+                    visited.put(word, level + 1);
                 }
             }
-            visited.addAll(subVisited);
-        }
-        return 0;
+        } 
+        return -1;
     }
 }
 // @lc code=end
 
 
-// 广度优先算法，方法1
+// 广度优先算法，方法1，获取相邻字符串时不进行过滤
 // class Solution {
 //     int L = 0;
 //     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
@@ -170,7 +187,7 @@ class Solution {
 
 
 
-// 广度优先算法，方法2
+// 广度优先算法，方法2， 获取相邻字符串时也进行过滤
 // class Solution {
 //     int L = 0;
 //     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
@@ -218,5 +235,240 @@ class Solution {
 //             }
 //         }
 //         return list;
+//     }
+// }
+
+
+
+// 方法3，使用通用字符串，里面每轮循环都记录层次
+// class Solution {
+//     int L = 0;
+//     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+//         Set<String> visited = new HashSet<String>();
+//         Map<String, List<String>> allMap = new HashMap<String, List<String>>();
+//         L = beginWord.length();
+//         for (String word : wordList) {
+//             for (int i = 0; i < L; i++) {
+//                 String s = word.substring(0, i) + "*" + word.substring(i + 1, L);
+//                 List<String> list = allMap.getOrDefault(s, new ArrayList<String>());
+//                 list.add(word);
+//                 allMap.put(s, list);
+//             }
+//         }
+//         return helper(beginWord, endWord, visited, 0, allMap);
+//     }
+
+//     public int helper(String beginWord, String endWord, Set<String> visited, int level, 
+//             Map<String, List<String>> allMap) {
+//         LinkedList<String> deque = new LinkedList<String>();
+//         deque.addLast(beginWord);
+//         while (!deque.isEmpty()) {
+//             int size = deque.size();
+//             level++;
+//             Set<String> subVisited = new HashSet<String>();
+//             for (int i = 0; i < size; i++) {
+//                 String curWord = deque.removeFirst();
+//                 for (int j = 0; j < L; j++) {
+//                     String s = curWord.substring(0, j) + "*" + curWord.substring(j + 1, L);
+//                     List<String> list = allMap.getOrDefault(s, new ArrayList<String>());
+//                     for (String word : list) {
+//                         if (word.equals(endWord)) return level + 1;
+//                         if (!visited.contains(word)) {
+//                             deque.add(word);
+//                             subVisited.add(word);
+//                         }
+//                     }
+//                 }
+//             }
+//             visited.addAll(subVisited);
+//         }
+//         return 0;
+//     }
+// }
+
+
+// 默写官方解法
+// class Solution {
+//     int L = 0;
+//     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+//         Set<String> visited = new HashSet<String>();
+//         Map<String, List<String>> allMap = new HashMap<String, List<String>>();
+//         L = beginWord.length();
+//         for (String word : wordList) {
+//             for (int i = 0; i < L; i++) {
+//                 String s = word.substring(0, i) + "*" + word.substring(i + 1, L);
+//                 List<String> list = allMap.getOrDefault(s, new ArrayList<String>());
+//                 list.add(word);
+//                 allMap.put(s, list);
+//             }
+//         }
+//         return helper(beginWord, endWord, visited, allMap);
+//     }
+
+//     public int helper(String beginWord, String endWord, Set<String> visited, 
+//             Map<String, List<String>> allMap) {
+//         LinkedList<Pair<String, Integer>> deque = new LinkedList<Pair<String, Integer>>();
+//         deque.addLast(new Pair<String, Integer>(beginWord, 1));
+//         while (!deque.isEmpty()) {
+//             Pair<String, Integer> p = deque.removeFirst();
+//             String curWord = p.getKey();
+//             Integer level = p.getValue();
+//             for (int j = 0; j < L; j++) {
+//                 String s = curWord.substring(0, j) + "*" + curWord.substring(j + 1, L);
+//                 List<String> list = allMap.getOrDefault(s, new ArrayList<String>());
+//                 for (String word : list) {
+//                     if (word.equals(endWord)) return level + 1;
+//                     if (!visited.contains(word)) {
+//                         deque.add(new Pair<String, Integer>(word, level + 1));
+//                         visited.add(word);
+//                     }
+//                 }
+//             }
+//         }    
+//         return 0;
+//     }
+// }
+
+
+
+// 双向队列，方法1，出队列时判断
+// class Solution {
+//     int L = 0;
+//     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+//         if (!wordList.contains(endWord)) return 0;
+//         Map<String, List<String>> allMap = new HashMap<String, List<String>>();
+//         L = beginWord.length();
+//         for (String word : wordList) {
+//             for (int i = 0; i < L; i++) {
+//                 String s = word.substring(0, i) + "*" + word.substring(i + 1, L);
+//                 List<String> list = allMap.getOrDefault(s, new ArrayList<String>());
+//                 list.add(word);
+//                 allMap.put(s, list);
+//             }
+//         }
+//         return helper(beginWord, endWord, allMap);
+//     }
+
+//     public int helper(String beginWord, String endWord, 
+//             Map<String, List<String>> allMap) {
+//         LinkedList<Pair<String, Integer>> deque1 = new LinkedList<Pair<String, Integer>>();
+//         deque1.addLast(new Pair<String, Integer>(beginWord, 1));
+//         Map<String, Integer> visited = new HashMap<String, Integer>();
+//         visited.put(beginWord, 1);
+//         LinkedList<Pair<String, Integer>> deque2 = new LinkedList<Pair<String, Integer>>();
+//         deque2.addLast(new Pair<String, Integer>(endWord, 1));
+//         Map<String, Integer> otherVisited = new HashMap<String, Integer>();
+//         otherVisited.put(endWord, 1);
+
+//         while (!deque1.isEmpty() && !deque2.isEmpty()) {
+//             int level;
+//             if (deque1.size() <= deque2.size()) {
+//                 level = visitedInQeque(deque1, visited, otherVisited, allMap);
+//             } else {
+//                 level =  visitedInQeque(deque2, otherVisited, visited, allMap);
+//             }
+//             if (level > 0) return level;
+//         }    
+//         return 0;
+//     }
+
+//     public int visitedInQeque(LinkedList<Pair<String, Integer>> deque, 
+//                             Map<String, Integer> visited, Map<String, Integer> otherVisited,
+//                             Map<String, List<String>> allMap) {
+//         int size = deque.size();
+//         for (int i = 0; i < size; i++) {
+//             Pair<String, Integer> p = deque.removeFirst();
+//             String key = p.getKey();
+//             int level = p.getValue();
+
+//             if (otherVisited.containsKey(key)) {
+//                 return level + (int)otherVisited.get(key) - 1;
+//             }
+
+//             for (int j = 0; j < L; j++) {
+//                 String s = key.substring(0, j) + "*" + key.substring(j + 1, L);
+//                 List<String> list = allMap.getOrDefault(s, new ArrayList<String>());
+//                 for (String word : list) {
+                    
+//                     if (!visited.containsKey(word)) {
+//                         deque.addLast(new Pair<String, Integer>(word, level + 1));
+//                         visited.put(word, level + 1);
+//                     }
+//                 }
+//             }
+//         }
+//         return -1;
+//     }
+// }
+
+
+
+
+
+// 双向队列，入队列前判断，减少一轮循环
+// class Solution {
+//     int L = 0;
+//     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+//         if (!wordList.contains(endWord)) return 0;
+//         Map<String, List<String>> allMap = new HashMap<String, List<String>>();
+//         L = beginWord.length();
+//         for (String word : wordList) {
+//             for (int i = 0; i < L; i++) {
+//                 String s = word.substring(0, i) + "*" + word.substring(i + 1, L);
+//                 List<String> list = allMap.getOrDefault(s, new ArrayList<String>());
+//                 list.add(word);
+//                 allMap.put(s, list);
+//             }
+//         }
+//         return helper(beginWord, endWord, allMap);
+//     }
+
+//     public int helper(String beginWord, String endWord, 
+//             Map<String, List<String>> allMap) {
+//         LinkedList<Pair<String, Integer>> deque1 = new LinkedList<Pair<String, Integer>>();
+//         deque1.addLast(new Pair<String, Integer>(beginWord, 1));
+//         Map<String, Integer> visited = new HashMap<String, Integer>();
+//         visited.put(beginWord, 1);
+//         LinkedList<Pair<String, Integer>> deque2 = new LinkedList<Pair<String, Integer>>();
+//         deque2.addLast(new Pair<String, Integer>(endWord, 1));
+//         Map<String, Integer> otherVisited = new HashMap<String, Integer>();
+//         otherVisited.put(endWord, 1);
+
+//         while (!deque1.isEmpty() && !deque2.isEmpty()) {
+//             int level;
+//             if (deque1.size() <= deque2.size()) {
+//                 level = visitedInQeque(deque1, visited, otherVisited, allMap);
+//             } else {
+//                 level =  visitedInQeque(deque2, otherVisited, visited, allMap);
+//             }
+//             if (level > 0) return level;
+//         }    
+//         return 0;
+//     }
+
+//     public int visitedInQeque(LinkedList<Pair<String, Integer>> deque, 
+//                             Map<String, Integer> visited, Map<String, Integer> otherVisited,
+//                             Map<String, List<String>> allMap) {
+//         int size = deque.size();
+//         for (int i = 0; i < size; i++) {
+//             Pair<String, Integer> p = deque.removeFirst();
+//             String key = p.getKey();
+//             int level = p.getValue();
+
+//             for (int j = 0; j < L; j++) {
+//                 String s = key.substring(0, j) + "*" + key.substring(j + 1, L);
+//                 List<String> list = allMap.getOrDefault(s, new ArrayList<String>());
+//                 for (String word : list) {
+//                     if (otherVisited.containsKey(word)) {
+//                         return level + (int)otherVisited.get(word);
+//                     }
+//                     if (!visited.containsKey(word)) {
+//                         deque.addLast(new Pair<String, Integer>(word, level + 1));
+//                         visited.put(word, level + 1);
+//                     }
+//                 }
+//             }
+//         }
+//         return -1;
 //     }
 // }
