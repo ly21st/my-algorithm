@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/logkeeper-init.iml" filepath="$PROJECT_DIR$/logkeeper-init.iml" />
       <module fileurl="file://$PROJECT_DIR$/my-algorithm.iml" filepath="$PROJECT_DIR$/my-algorithm.iml" />
-      <module fileurl="file://$PROJECT_DIR$/my-alorithm.iml" filepath="$PROJECT_DIR$/my-alorithm.iml" />
     </modules>
   </component>
 </project>
