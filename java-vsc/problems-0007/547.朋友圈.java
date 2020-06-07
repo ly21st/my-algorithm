@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /*
  * @lc app=leetcode.cn id=547 lang=java
  *
@@ -55,39 +57,38 @@
 // @lc code=start
 class Solution {
     public int findCircleNum(int[][] M) {
-        int m = M.length; 
-        if (m < 1) return 0;
-        int n = M[0].length;
-        if (n < 1) return 0;
-        return helper(m, n, M);
-    }
-
-    public int helper(int m, int n, int[][]M) {
-        int count = 0;
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                if (M[i][j] == 1) {
-                    dfs(n, M, i, j);
-                    count++;
+        int n = M.length; 
+        int []parent = new int[n];
+        Arrays.fill(parent, -1);
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < M[i].length; j++) {
+                if (M[i][j] == 1 && i != j) {
+                    union(parent, i, j);
                 }
+            }
+        }
+        int count = 0; 
+        for (int i = 0; i < n; i++) {
+            if (parent[i] == -1) {
+                count++;
             }
         }
         return count;
     }
 
-    public void dfs(int n, int[][]M, int i, int j) {
-        M[i][i] = 0; 
-        M[j][j] = 0;
-        M[i][j] = 0; 
-        M[j][i] = 0;
-        for (int ii = 0; ii < n; ii++) {
-            if (M[i][ii] == 1) {
-                dfs(n, M, i, ii);
-            }
-            if (M[j][ii] == 1) {
-                dfs(n, M, j, ii);
-            }
+    public void union(int[]parent, int i, int j) {
+        int setX = find(parent, i);
+        int setY = find(parent, j);
+        if (setX != setY) {
+            parent[setX] = setY;
         }
+    }
+
+    public int find(int []parent, int i) {
+        while (parent[i] != -1) {
+            i = parent[i];
+        }
+        return i;
     }
 }
 // @lc code=end
