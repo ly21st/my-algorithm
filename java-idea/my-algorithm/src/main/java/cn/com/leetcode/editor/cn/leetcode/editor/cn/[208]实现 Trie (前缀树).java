@@ -82,7 +82,7 @@ class Trie {
     public boolean searchAux(TrieNode node, String word, int i) {
         TrieNode next = node.get(word.charAt(i));
         if (next == null) {
-            return false;
+            return false;46
         }
         if (i == word.length() - 1) {
             return next.getEnd() == true;
