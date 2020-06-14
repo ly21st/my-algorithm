@@ -37,17 +37,8 @@
 // @lc code=start
 class Solution {
     public boolean isPowerOfTwo(int n) {
-        if (n < 0) return false;
-        return oneCount(n) == 1;
-    }
-
-    public int oneCount(int n) {
-        int count = 0;
-        while(n != 0) {
-            n = n & (n - 1);
-            count++;
-        }
-        return count;
+        if (n <= 0) return false;
+        return (n & (n - 1)) == 0;
     }
 }
 // @lc code=end
