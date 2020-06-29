@@ -11,3 +11,7 @@ add_executable(longestCommonPrefix longestCommonPrefix.cpp)
 add_executable(isPalindrome isPalindrome.cpp)
 add_executable(gridIllumination gridIllumination.cpp)
 add_executable(gridIllumination2 gridIllumination2.cpp)
+
+
+add_executable(reactor lingshengxueyuan/chap5_3/reactor.c)
+add_executable(mul_port_client_epoll lingshengxueyuan/chap5_3/mul_port_client_epoll.c)

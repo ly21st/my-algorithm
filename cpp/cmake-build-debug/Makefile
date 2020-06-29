@@ -213,6 +213,32 @@ longestCommonPrefix/fast:
 	$(MAKE) -f CMakeFiles\longestCommonPrefix.dir\build.make CMakeFiles/longestCommonPrefix.dir/build
 .PHONY : longestCommonPrefix/fast
 
+#=============================================================================
+# Target rules for targets named reactor
+
+# Build rule for target.
+reactor: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 reactor
+.PHONY : reactor
+
+# fast build rule for target.
+reactor/fast:
+	$(MAKE) -f CMakeFiles\reactor.dir\build.make CMakeFiles/reactor.dir/build
+.PHONY : reactor/fast
+
+#=============================================================================
+# Target rules for targets named mul_port_client_epoll
+
+# Build rule for target.
+mul_port_client_epoll: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 mul_port_client_epoll
+.PHONY : mul_port_client_epoll
+
+# fast build rule for target.
+mul_port_client_epoll/fast:
+	$(MAKE) -f CMakeFiles\mul_port_client_epoll.dir\build.make CMakeFiles/mul_port_client_epoll.dir/build
+.PHONY : mul_port_client_epoll/fast
+
 MyCircularDeque.obj: MyCircularDeque.cpp.obj
 
 .PHONY : MyCircularDeque.obj
@@ -320,6 +346,60 @@ isPalindrome.s: isPalindrome.cpp.s
 isPalindrome.cpp.s:
 	$(MAKE) -f CMakeFiles\isPalindrome.dir\build.make CMakeFiles/isPalindrome.dir/isPalindrome.cpp.s
 .PHONY : isPalindrome.cpp.s
+
+lingshengxueyuan/chap5_3/mul_port_client_epoll.obj: lingshengxueyuan/chap5_3/mul_port_client_epoll.c.obj
+
+.PHONY : lingshengxueyuan/chap5_3/mul_port_client_epoll.obj
+
+# target to build an object file
+lingshengxueyuan/chap5_3/mul_port_client_epoll.c.obj:
+	$(MAKE) -f CMakeFiles\mul_port_client_epoll.dir\build.make CMakeFiles/mul_port_client_epoll.dir/lingshengxueyuan/chap5_3/mul_port_client_epoll.c.obj
+.PHONY : lingshengxueyuan/chap5_3/mul_port_client_epoll.c.obj
+
+lingshengxueyuan/chap5_3/mul_port_client_epoll.i: lingshengxueyuan/chap5_3/mul_port_client_epoll.c.i
+
+.PHONY : lingshengxueyuan/chap5_3/mul_port_client_epoll.i
+
+# target to preprocess a source file
+lingshengxueyuan/chap5_3/mul_port_client_epoll.c.i:
+	$(MAKE) -f CMakeFiles\mul_port_client_epoll.dir\build.make CMakeFiles/mul_port_client_epoll.dir/lingshengxueyuan/chap5_3/mul_port_client_epoll.c.i
+.PHONY : lingshengxueyuan/chap5_3/mul_port_client_epoll.c.i
+
+lingshengxueyuan/chap5_3/mul_port_client_epoll.s: lingshengxueyuan/chap5_3/mul_port_client_epoll.c.s
+
+.PHONY : lingshengxueyuan/chap5_3/mul_port_client_epoll.s
+
+# target to generate assembly for a file
+lingshengxueyuan/chap5_3/mul_port_client_epoll.c.s:
+	$(MAKE) -f CMakeFiles\mul_port_client_epoll.dir\build.make CMakeFiles/mul_port_client_epoll.dir/lingshengxueyuan/chap5_3/mul_port_client_epoll.c.s
+.PHONY : lingshengxueyuan/chap5_3/mul_port_client_epoll.c.s
+
+lingshengxueyuan/chap5_3/reactor.obj: lingshengxueyuan/chap5_3/reactor.c.obj
+
+.PHONY : lingshengxueyuan/chap5_3/reactor.obj
+
+# target to build an object file
+lingshengxueyuan/chap5_3/reactor.c.obj:
+	$(MAKE) -f CMakeFiles\reactor.dir\build.make CMakeFiles/reactor.dir/lingshengxueyuan/chap5_3/reactor.c.obj
+.PHONY : lingshengxueyuan/chap5_3/reactor.c.obj
+
+lingshengxueyuan/chap5_3/reactor.i: lingshengxueyuan/chap5_3/reactor.c.i
+
+.PHONY : lingshengxueyuan/chap5_3/reactor.i
+
+# target to preprocess a source file
+lingshengxueyuan/chap5_3/reactor.c.i:
+	$(MAKE) -f CMakeFiles\reactor.dir\build.make CMakeFiles/reactor.dir/lingshengxueyuan/chap5_3/reactor.c.i
+.PHONY : lingshengxueyuan/chap5_3/reactor.c.i
+
+lingshengxueyuan/chap5_3/reactor.s: lingshengxueyuan/chap5_3/reactor.c.s
+
+.PHONY : lingshengxueyuan/chap5_3/reactor.s
+
+# target to generate assembly for a file
+lingshengxueyuan/chap5_3/reactor.c.s:
+	$(MAKE) -f CMakeFiles\reactor.dir\build.make CMakeFiles/reactor.dir/lingshengxueyuan/chap5_3/reactor.c.s
+.PHONY : lingshengxueyuan/chap5_3/reactor.c.s
 
 longestCommonPrefix.obj: longestCommonPrefix.cpp.obj
 
@@ -443,6 +523,8 @@ help:
 	@echo ... twoSum
 	@echo ... gridIllumination2
 	@echo ... longestCommonPrefix
+	@echo ... reactor
+	@echo ... mul_port_client_epoll
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... MyCircularDeque.obj
@@ -457,6 +539,12 @@ help:
 	@echo ... isPalindrome.obj
 	@echo ... isPalindrome.i
 	@echo ... isPalindrome.s
+	@echo ... lingshengxueyuan/chap5_3/mul_port_client_epoll.obj
+	@echo ... lingshengxueyuan/chap5_3/mul_port_client_epoll.i
+	@echo ... lingshengxueyuan/chap5_3/mul_port_client_epoll.s
+	@echo ... lingshengxueyuan/chap5_3/reactor.obj
+	@echo ... lingshengxueyuan/chap5_3/reactor.i
+	@echo ... lingshengxueyuan/chap5_3/reactor.s
 	@echo ... longestCommonPrefix.obj
 	@echo ... longestCommonPrefix.i
 	@echo ... longestCommonPrefix.s
