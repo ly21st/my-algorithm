@@ -10,11 +10,16 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <fcntl.h>
+#include <stdarg.h>
+#include <unistd.h>
 
 
 #define MAX_BUFFER		128
 #define MAX_EPOLLSIZE	(384*1024)
 #define MAX_PORT		100
+
+void LogError(const char* _FLE,const char* _FUN,unsigned int _LNE,const char *fmt, ...);
+void LogInfo(const char* _FLE,const char* _FUN,unsigned int _LNE,const char *fmt, ...);
 
 #define TIME_SUB_MS(tv1, tv2)  ((tv1.tv_sec - tv2.tv_sec) * 1000 + (tv1.tv_usec - tv2.tv_usec) / 1000)
 
@@ -73,7 +78,7 @@ int main(int argc, char **argv) {
 		if (connections < 340000 && !isContinue) {
 			sockfd = socket(AF_INET, SOCK_STREAM, 0);
 			if (sockfd == -1) {
-				perror("socket");
+			    LogError(__FILE__, __func__, __LINE__, "socket error");
 				goto err;
 			}
 
@@ -81,13 +86,13 @@ int main(int argc, char **argv) {
 			addr.sin_port = htons(port+index);
 
 			if (connect(sockfd, (struct sockaddr*)&addr, sizeof(struct sockaddr_in)) < 0) {
-				perror("connect");
+                LogError(__FILE__, __func__, __LINE__, "connect error");
 				goto err;
 			}
 			ntySetNonblock(sockfd);
 			ntySetReUseAddr(sockfd);
 
-			sprintf(buffer, "Hello Server: client --> %d\n", connections);
+			snprintf(buffer, sizeof(buffer), "Hello Server: client --> %d\n", connections);
 			send(sockfd, buffer, strlen(buffer), 0);
 
 			ev.data.fd = sockfd;
@@ -111,11 +116,14 @@ int main(int argc, char **argv) {
 				int clientfd = events[i].data.fd;
 
 				if (events[i].events & EPOLLOUT) {
-					sprintf(buffer, "data from %d\n", clientfd);
+					snprintf(buffer, sizeof(buffer), "data from %d\n", clientfd);
 					send(sockfd, buffer, strlen(buffer), 0);
+                //    send(clientfd, buffer, strlen(buffer), 0);
 				} else if (events[i].events & EPOLLIN) {
 					char rBuffer[MAX_BUFFER] = {0};				
 					ssize_t length = recv(sockfd, rBuffer, MAX_BUFFER, 0);
+                //    ssize_t length = recv(clientfd, rBuffer, MAX_BUFFER, 0);
+                    rBuffer[MAX_BUFFER-1] = 0;
 					if (length > 0) {
 						printf(" RecvBuffer:%s\n", rBuffer);
 
@@ -125,16 +133,19 @@ int main(int argc, char **argv) {
 						
 					} else if (length == 0) {
 						printf(" Disconnect clientfd:%d\n", clientfd);
+                        LogError(__FILE__, __func__, __LINE__, "recv data len is 0");
 						connections --;
 						close(clientfd);
 					} else {
 						if (errno == EINTR) continue;
 
 						printf(" Error clientfd:%d, errno:%d\n", clientfd, errno);
+                        LogError(__FILE__, __func__, __LINE__, "recv error");
 						close(clientfd);
 					}
 				} else {
 					printf(" clientfd:%d, errno:%d\n", clientfd, errno);
+                    LogError(__FILE__, __func__, __LINE__, "unknow even");
 					close(clientfd);
 				}
 			}
@@ -146,10 +157,39 @@ int main(int argc, char **argv) {
 	return 0;
 
 err:
-	printf("error : %s\n", strerror(errno));
+    LogError(__FILE__, __func__, __LINE__, "error:");
 	return 0;
 	
 }
+
+
+void LogError(const char* _FLE,const char* _FUN,unsigned int _LNE,const char *fmt, ...) {
+	va_list ap;
+	va_start(ap,fmt);
+	fprintf(
+			stdout,
+            "\n---------------- STAR V0.X LOW LEVEL ERROR REPORT ----------------\nFILE: %s, FUNC: %s, LINE: %u\nPSID: %06u\nSYEN: %d\nSYER: %s\n",
+			_FLE, _FUN, _LNE,
+			getpid(),
+			errno,
+			strerror(errno));
+	vfprintf(stdout,fmt,ap);
+	va_end(ap);
+}
+
+void LogInfo(const char* _FLE,const char* _FUN,unsigned int _LNE,const char *fmt, ...) {
+	va_list ap;
+	va_start(ap,fmt);
+	fprintf(
+			stdout,
+            "\n---------------- STAR V0.X LOW LEVEL ERROR REPORT ----------------\nFILE: %s, FUNC: %s, LINE: %u\nPSID: %06u\n",
+			_FLE, _FUN, _LNE,
+			getpid());
+	vfprintf(stdout,fmt,ap);
+	va_end(ap);
+}
+
+
 
 
 

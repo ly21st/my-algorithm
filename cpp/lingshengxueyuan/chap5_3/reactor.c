@@ -9,6 +9,8 @@
 #include <unistd.h>
 #include <errno.h>
 
+#include <stdarg.h>
+#include <unistd.h>
 
 #define BUFFER_LENGTH		1024
 #define MAX_EPOLL_EVENTS	1024*1024 //connection 
@@ -42,6 +44,13 @@ struct ntyreactor {
 int recv_cb(int fd, int events, void *arg);
 int send_cb(int fd, int events, void *arg);
 
+void LogError(const char* _FLE,const char* _FUN,unsigned int _LNE,const char *fmt, ...);
+void LogInfo(const char* _FLE,const char* _FUN,unsigned int _LNE,const char *fmt, ...);
+
+static int ntySetReUseAddr(int fd) {
+    int reuse = 1;
+    return setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, (char *)&reuse, sizeof(reuse));
+}
 
 void nty_event_set(struct ntyevent *ev, int fd, NCALLBACK callback, void *arg) {
 
@@ -72,6 +81,7 @@ int nty_event_add(int epfd, int events, struct ntyevent *ev) {
 
 	if (epoll_ctl(epfd, op, ev->fd, &ep_ev) < 0) {
 		printf("event add failed [fd=%d], events[%d]\n", ev->fd, events);
+        LogError(__FILE__, __func__, __LINE__, "epoll_ctl error");
 		return -1;
 	}
 
@@ -83,6 +93,7 @@ int nty_event_del(int epfd, struct ntyevent *ev) {
 	struct epoll_event ep_ev = {0, {0}};
 
 	if (ev->status != 1) {
+        LogError(__FILE__, __func__, __LINE__, "ev->status != 1");
 		return -1;
 	}
 
@@ -121,6 +132,7 @@ int recv_cb(int fd, int events, void *arg) {
 
 		close(ev->fd);
 		printf("recv[fd=%d] error[%d]:%s\n", fd, errno, strerror(errno));
+        LogError(__FILE__, __func__, __LINE__, "recv error");
 		
 	}
 
@@ -148,6 +160,7 @@ int send_cb(int fd, int events, void *arg) {
 
 		nty_event_del(reactor->epfd, ev);
 		printf("send[fd=%d] error %s\n", fd, strerror(errno));
+        LogError(__FILE__, __func__, __LINE__, "send error");
 
 	}
 
@@ -169,6 +182,7 @@ int accept_cb(int fd, int events, void *arg) {
 			
 		}
 		printf("accept: %s\n", strerror(errno));
+        LogError(__FILE__, __func__, __LINE__, "accept error");
 		return -1;
 	}
 
@@ -188,6 +202,7 @@ int accept_cb(int fd, int events, void *arg) {
 		int flag = 0;
 		if ((flag = fcntl(clientfd, F_SETFL, O_NONBLOCK)) < 0) {
 			printf("%s: fcntl nonblocking failed, %d\n", __func__, MAX_EPOLL_EVENTS);
+            LogError(__FILE__, __func__, __LINE__, "fcntl error");
 			break;
 		}
 
@@ -214,10 +229,13 @@ int init_sock(short port) {
 	server_addr.sin_addr.s_addr = htonl(INADDR_ANY);
 	server_addr.sin_port = htons(port);
 
+    ntySetReUseAddr(fd);
+
 	bind(fd, (struct sockaddr*)&server_addr, sizeof(server_addr));
 
 	if (listen(fd, 20) < 0) {
 		printf("listen failed : %s\n", strerror(errno));
+        LogError(__FILE__, __func__, __LINE__, "listen error");
 	}
 
 	printf("listen port : %d\n", port);
@@ -234,6 +252,7 @@ int ntyreactor_init(struct ntyreactor *reactor) {
 	reactor->epfd = epoll_create(1);
 	if (reactor->epfd <= 0) {
 		printf("create epfd in %s err %s\n", __func__, strerror(errno));
+        LogError(__FILE__, __func__, __LINE__, "epoll_create error");
 		return -2;
 	}
 
@@ -301,6 +320,7 @@ int ntyreactor_run(struct ntyreactor *reactor) {
 		int nready = epoll_wait(reactor->epfd, events, MAX_EPOLL_ITEM, 1000);
 		if (nready < 0) {
 			printf("epoll_wait error, exit\n");
+            LogError(__FILE__, __func__, __LINE__, "epoll_wait error");
 			continue;
 		}
 
@@ -350,5 +370,32 @@ int main(int argc, char *argv[]) {
 	return 0;
 }
 
+
+
+void LogError(const char* _FLE,const char* _FUN,unsigned int _LNE,const char *fmt, ...) {
+    va_list ap;
+    va_start(ap,fmt);
+    fprintf(
+            stdout,
+            "\n---------------- STAR V0.X LOW LEVEL ERROR REPORT ----------------\nFILE: %s, FUNC: %s, LINE: %u\nPSID: %06u\nSYEN: %d\nSYER: %s\n",
+            _FLE, _FUN, _LNE,
+            getpid(),
+            errno,
+            strerror(errno));
+    vfprintf(stdout,fmt,ap);
+    va_end(ap);
+}
+
+void LogInfo(const char* _FLE,const char* _FUN,unsigned int _LNE,const char *fmt, ...) {
+    va_list ap;
+    va_start(ap,fmt);
+    fprintf(
+            stdout,
+            "\n---------------- STAR V0.X LOW LEVEL ERROR REPORT ----------------\nFILE: %s, FUNC: %s, LINE: %u\nPSID: %06u\n",
+            _FLE, _FUN, _LNE,
+            getpid());
+    vfprintf(stdout,fmt,ap);
+    va_end(ap);
+}
 
 
