@@ -112,10 +112,7 @@ int main(int argc, char **argv) {
 
 			int time_used = TIME_SUB_MS(tv_begin, tv_cur);
 			printf("connections: %d, sockfd:%d, time_used:%d\n", connections, sockfd, time_used);
-
-			LogError(__FILE__, __func__, __LINE__, "test error\n");
-			LogInfo(__FILE__, __func__, __LINE__, "test info\n");
-
+			
 			int nfds = epoll_wait(epoll_fd, events, connections, 100);
 			for (i = 0;i < nfds;i ++) {
 				int clientfd = events[i].data.fd;
