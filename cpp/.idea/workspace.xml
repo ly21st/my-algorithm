@@ -21,9 +21,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65c40f1c-de2a-42eb-a477-9c1e91fe9212" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lingshengxueyuan/chap5_3/client.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lingshengxueyuan/chap5_3/service.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lingshengxueyuan/chap5_3/mul_port_client_epoll.c" beforeDir="false" afterPath="$PROJECT_DIR$/lingshengxueyuan/chap5_3/mul_port_client_epoll.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lingshengxueyuan/chap5_3/reactor.c" beforeDir="false" afterPath="$PROJECT_DIR$/lingshengxueyuan/chap5_3/reactor.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingshengxueyuan/chap5_3/学习笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/lingshengxueyuan/chap5_3/学习笔记.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,13 +38,110 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lingshengxueyuan/chap5_3/mul_port_client_epoll.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="469">
+              <caret line="225" lean-forward="true" selection-start-line="187" selection-end-line="225" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lingshengxueyuan/chap5_3/service.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1057">
+              <caret line="65" column="15" lean-forward="true" selection-start-line="65" selection-start-column="15" selection-end-line="65" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lingshengxueyuan/chap5_3/client.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1233">
+              <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://H:/MinGW64/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/errno.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#344#520#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lingshengxueyuan/chap5_3/reactor.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="469">
+              <caret line="430" lean-forward="true" selection-start-line="430" selection-end-line="430" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/lingshengxueyuan/chap5_3/client.c" />
+        <option value="$PROJECT_DIR$/lingshengxueyuan/chap5_3/service.c" />
+        <option value="$PROJECT_DIR$/lingshengxueyuan/chap5_3/mul_port_client_epoll.c" />
+        <option value="$PROJECT_DIR$/lingshengxueyuan/chap5_3/reactor.c" />
+      </list>
+    </option>
+  </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-12" />
+    <option name="y" value="-12" />
+    <option name="width" value="1848" />
+    <option name="height" value="942" />
+  </component>
   <component name="ProjectId" id="1a57eU2me32mpblpKxckxRjHy4O" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="cp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cpp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cpp" type="462c0819:PsiDirectoryNode" />
+              <item name="lingshengxueyuan" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cpp" type="462c0819:PsiDirectoryNode" />
+              <item name="lingshengxueyuan" type="462c0819:PsiDirectoryNode" />
+              <item name="chap5_3" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -69,7 +169,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="CMake Application.MyCircularDeque">
+  <component name="RunManager" selected="Application.MyCircularDeque">
     <configuration name="MyCircularDeque" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cp" TARGET_NAME="MyCircularDeque" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cp" RUN_TARGET_NAME="MyCircularDeque">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -121,16 +221,16 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Application.MyCircularDeque" />
-      <item itemvalue="CMake Application.gridIllumination" />
-      <item itemvalue="CMake Application.gridIllumination2" />
-      <item itemvalue="CMake Application.isPalindrome" />
-      <item itemvalue="CMake Application.longestCommonPrefix" />
-      <item itemvalue="CMake Application.merge" />
-      <item itemvalue="CMake Application.mul_port_client_epoll" />
-      <item itemvalue="CMake Application.reactor" />
-      <item itemvalue="CMake Application.trap" />
-      <item itemvalue="CMake Application.twoSum" />
+      <item itemvalue="Application.MyCircularDeque" />
+      <item itemvalue="Application.gridIllumination" />
+      <item itemvalue="Application.gridIllumination2" />
+      <item itemvalue="Application.isPalindrome" />
+      <item itemvalue="Application.longestCommonPrefix" />
+      <item itemvalue="Application.merge" />
+      <item itemvalue="Application.mul_port_client_epoll" />
+      <item itemvalue="Application.reactor" />
+      <item itemvalue="Application.trap" />
+      <item itemvalue="Application.twoSum" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -171,6 +271,35 @@
     </task>
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="13372000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21261115" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="CMake" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Cargo" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -180,6 +309,12 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -291,5 +426,35 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lingshengxueyuan/chap5_3/service.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1057">
+          <caret line="65" column="15" lean-forward="true" selection-start-line="65" selection-start-column="15" selection-end-line="65" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lingshengxueyuan/chap5_3/client.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1233">
+          <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lingshengxueyuan/chap5_3/mul_port_client_epoll.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="225" lean-forward="true" selection-start-line="187" selection-end-line="225" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lingshengxueyuan/chap5_3/reactor.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="430" lean-forward="true" selection-start-line="430" selection-end-line="430" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

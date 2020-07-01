@@ -11,6 +11,8 @@
 
 #include <stdarg.h>
 #include <unistd.h>
+#include <time.h>
+#include <sys/timeb.h>
 
 #define BUFFER_LENGTH		1024
 #define MAX_EPOLL_EVENTS	1024*1024 //connection 
@@ -155,7 +157,7 @@ int send_cb(int fd, int events, void *arg) {
 		nty_event_add(reactor->epfd, EPOLLIN, ev);
 		
 	} else {
-
+		if (errno == EAGAIN || errno == EWOULDBLOCK) return;
 		close(ev->fd);
 
 		nty_event_del(reactor->epfd, ev);
@@ -371,32 +373,58 @@ int main(int argc, char *argv[]) {
 	return 0;
 }
 
+char* timeNowWithMs(char* now) {
+	struct tm tme;
+	struct timeb timebuffer;
+	time_t t;
 
+	if (now == NULL) {
+		return (NULL);
+	}
+	t = time(0);
+	ftime(&timebuffer);
+	memcpy(&tme, localtime(&t), sizeof(struct tm));
+	sprintf(now, "%04d/%02d/%02d %02d:%02d:%02d.%03hu",
+			tme.tm_year + 1900, tme.tm_mon + 1, tme.tm_mday, tme.tm_hour,
+			tme.tm_min, tme.tm_sec, timebuffer.millitm);
+	return (now);
+}
 
 void LogError(const char* _FLE,const char* _FUN,unsigned int _LNE,const char *fmt, ...) {
-    va_list ap;
-    va_start(ap,fmt);
-    fprintf(
-            stdout,
-            "\n---------------- STAR V0.X LOW LEVEL ERROR REPORT ----------------\nFILE: %s, FUNC: %s, LINE: %u\nPSID: %06u\nSYEN: %d\nSYER: %s\n",
-            _FLE, _FUN, _LNE,
-            getpid(),
-            errno,
-            strerror(errno));
-    vfprintf(stdout,fmt,ap);
-    va_end(ap);
+	va_list ap;
+	va_start(ap,fmt);
+	char now[32];
+	static pid_t pid = 0;
+
+	if (pid == 0) {
+		pid = getpid();
+	}
+
+	fprintf(
+			stdout,
+			"%s - PSID:%06u FILE:%s FUNC:%s LINE:%u SYEN:%d SYER:%s [MSG]- ",
+			timeNowWithMs(now), pid, _FLE, _FUN, _LNE,
+			errno,
+			strerror(errno));
+	vfprintf(stdout,fmt,ap);
+	va_end(ap);
 }
 
 void LogInfo(const char* _FLE,const char* _FUN,unsigned int _LNE,const char *fmt, ...) {
-    va_list ap;
-    va_start(ap,fmt);
-    fprintf(
-            stdout,
-            "\n---------------- STAR V0.X LOW LEVEL ERROR REPORT ----------------\nFILE: %s, FUNC: %s, LINE: %u\nPSID: %06u\n",
-            _FLE, _FUN, _LNE,
-            getpid());
-    vfprintf(stdout,fmt,ap);
-    va_end(ap);
+	va_list ap;
+	va_start(ap,fmt);
+	char now[32];
+	static pid_t pid = 0;
+
+	if (pid == 0) {
+		pid = getpid();
+	}
+
+	timeNowWithMs(now);
+	fprintf(
+			stdout,
+			"%s - PSID:%06u FILE:%s FUNC:%s LINE:%u [MSG]- ",
+			timeNowWithMs(now), pid, _FLE, _FUN, _LNE);
+	vfprintf(stdout,fmt,ap);
+	va_end(ap);
 }
-
-

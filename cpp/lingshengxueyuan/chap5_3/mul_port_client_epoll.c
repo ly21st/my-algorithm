@@ -12,6 +12,8 @@
 #include <fcntl.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <time.h>
+#include <sys/timeb.h>
 
 
 #define MAX_BUFFER		128
@@ -78,7 +80,7 @@ int main(int argc, char **argv) {
 		if (connections < 340000 && !isContinue) {
 			sockfd = socket(AF_INET, SOCK_STREAM, 0);
 			if (sockfd == -1) {
-			    LogError(__FILE__, __func__, __LINE__, "socket error");
+			    LogError(__FILE__, __func__, __LINE__, "socket error\n");
 				goto err;
 			}
 
@@ -86,7 +88,7 @@ int main(int argc, char **argv) {
 			addr.sin_port = htons(port+index);
 
 			if (connect(sockfd, (struct sockaddr*)&addr, sizeof(struct sockaddr_in)) < 0) {
-                LogError(__FILE__, __func__, __LINE__, "connect error");
+                LogError(__FILE__, __func__, __LINE__, "connect error\n");
 				goto err;
 			}
 			ntySetNonblock(sockfd);
@@ -111,18 +113,21 @@ int main(int argc, char **argv) {
 			int time_used = TIME_SUB_MS(tv_begin, tv_cur);
 			printf("connections: %d, sockfd:%d, time_used:%d\n", connections, sockfd, time_used);
 
+			LogError(__FILE__, __func__, __LINE__, "test error\n");
+			LogInfo(__FILE__, __func__, __LINE__, "test info\n");
+
 			int nfds = epoll_wait(epoll_fd, events, connections, 100);
 			for (i = 0;i < nfds;i ++) {
 				int clientfd = events[i].data.fd;
-
 				if (events[i].events & EPOLLOUT) {
 					snprintf(buffer, sizeof(buffer), "data from %d\n", clientfd);
-				//	send(sockfd, buffer, strlen(buffer), 0);
-                    send(clientfd, buffer, strlen(buffer), 0);
+					if (sockfd > 0) send(sockfd, buffer, strlen(buffer), 0);
+                //    send(clientfd, buffer, strlen(buffer), 0);
 				} else if (events[i].events & EPOLLIN) {
-					char rBuffer[MAX_BUFFER] = {0};				
-				//	ssize_t length = recv(sockfd, rBuffer, MAX_BUFFER, 0);
-                    ssize_t length = recv(clientfd, rBuffer, MAX_BUFFER, 0);
+					char rBuffer[MAX_BUFFER] = {0};
+				//	if (sockfd <= 0) continue;
+					ssize_t length = recv(sockfd, rBuffer, MAX_BUFFER, 0);
+                //    ssize_t length = recv(clientfd, rBuffer, MAX_BUFFER, 0);
                     rBuffer[MAX_BUFFER-1] = 0;
 					if (length > 0) {
 						printf(" RecvBuffer:%s\n", rBuffer);
@@ -133,19 +138,20 @@ int main(int argc, char **argv) {
 						
 					} else if (length == 0) {
 						printf(" Disconnect clientfd:%d\n", clientfd);
-                        LogError(__FILE__, __func__, __LINE__, "recv data len is 0");
+                        LogError(__FILE__, __func__, __LINE__, "recv data len is 0\n");
 						connections --;
 						close(clientfd);
 					} else {
 						if (errno == EINTR) continue;
+						if (errno == EAGAIN || errno == EWOULDBLOCK) continue;
 
 						printf(" Error clientfd:%d, errno:%d\n", clientfd, errno);
-                        LogError(__FILE__, __func__, __LINE__, "recv error");
+                        LogError(__FILE__, __func__, __LINE__, "recv error\n");
 						close(clientfd);
 					}
 				} else {
 					printf(" clientfd:%d, errno:%d\n", clientfd, errno);
-                    LogError(__FILE__, __func__, __LINE__, "unknow even");
+                    LogError(__FILE__, __func__, __LINE__, "unknow even\n");
 					close(clientfd);
 				}
 			}
@@ -157,20 +163,42 @@ int main(int argc, char **argv) {
 	return 0;
 
 err:
-    LogError(__FILE__, __func__, __LINE__, "error:");
+    LogError(__FILE__, __func__, __LINE__, "error:\n");
 	return 0;
 	
 }
 
+char* timeNowWithMs(char* now) {
+	struct tm tme;
+	struct timeb timebuffer;
+	time_t t;
+
+	if (now == NULL) {
+		return (NULL);
+	}
+	t = time(0);
+	ftime(&timebuffer);
+	memcpy(&tme, localtime(&t), sizeof(struct tm));
+	sprintf(now, "%04d/%02d/%02d %02d:%02d:%02d.%03hu",
+			tme.tm_year + 1900, tme.tm_mon + 1, tme.tm_mday, tme.tm_hour,
+			tme.tm_min, tme.tm_sec, timebuffer.millitm);
+	return (now);
+}
 
 void LogError(const char* _FLE,const char* _FUN,unsigned int _LNE,const char *fmt, ...) {
 	va_list ap;
 	va_start(ap,fmt);
+	char now[32];
+	static pid_t pid = 0;
+
+	if (pid == 0) {
+		pid = getpid();
+	}
+
 	fprintf(
 			stdout,
-            "\n---------------- STAR V0.X LOW LEVEL ERROR REPORT ----------------\nFILE: %s, FUNC: %s, LINE: %u\nPSID: %06u\nSYEN: %d\nSYER: %s\n",
-			_FLE, _FUN, _LNE,
-			getpid(),
+			"%s - PSID:%06u FILE:%s FUNC:%s LINE:%u SYEN:%d SYER:%s [MSG]- ",
+			timeNowWithMs(now), pid, _FLE, _FUN, _LNE,
 			errno,
 			strerror(errno));
 	vfprintf(stdout,fmt,ap);
@@ -180,16 +208,18 @@ void LogError(const char* _FLE,const char* _FUN,unsigned int _LNE,const char *fm
 void LogInfo(const char* _FLE,const char* _FUN,unsigned int _LNE,const char *fmt, ...) {
 	va_list ap;
 	va_start(ap,fmt);
+	char now[32];
+	static pid_t pid = 0;
+
+	if (pid == 0) {
+		pid = getpid();
+	}
+
+	timeNowWithMs(now);
 	fprintf(
 			stdout,
-            "\n---------------- STAR V0.X LOW LEVEL ERROR REPORT ----------------\nFILE: %s, FUNC: %s, LINE: %u\nPSID: %06u\n",
-			_FLE, _FUN, _LNE,
-			getpid());
+			"%s - PSID:%06u FILE:%s FUNC:%s LINE:%u [MSG]- ",
+			timeNowWithMs(now), pid, _FLE, _FUN, _LNE);
 	vfprintf(stdout,fmt,ap);
 	va_end(ap);
 }
-
-
-
-
-
