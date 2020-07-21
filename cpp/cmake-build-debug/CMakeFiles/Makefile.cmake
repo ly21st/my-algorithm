@@ -63,4 +63,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/longestCommonPrefix.dir/DependInfo.cmake"
   "CMakeFiles/reactor.dir/DependInfo.cmake"
   "CMakeFiles/mul_port_client_epoll.dir/DependInfo.cmake"
+  "CMakeFiles/sync_http.dir/DependInfo.cmake"
+  "CMakeFiles/async_http.dir/DependInfo.cmake"
   )

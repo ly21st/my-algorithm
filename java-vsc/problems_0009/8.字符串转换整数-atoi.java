@@ -107,11 +107,13 @@ class Solution {
             }
         } else if (cArr[i] == '+') {
             flag = true;
+            i++;
             while (i < len && cArr[i] == '0') {
                 i++;
             }
         } else if (cArr[i] == '-') {
             flag = false;
+            i++;
             while (i < len && cArr[i] == '0') {
                 i++;
             }

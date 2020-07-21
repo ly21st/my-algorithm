@@ -108,8 +108,6 @@ class Solution {
 //         int len = coins.length;
 //         if (len < 1) return 0;
 //         if (amount <= 0) return 0;
-//         Arrays.sort(coins);
-//         reverse(coins, len);
 //         helper(coins, len, amount, 0);
 //         return count == Integer.MAX_VALUE? -1 : count;
 //     }
@@ -127,18 +125,6 @@ class Solution {
 //             if (coins[i] <= left) {
 //                 helper(coins, n, left - coins[i], curCnt + 1);
 //             }
-//         }
-//     }
-
-//     public void reverse(int[] coins, int n) {
-//         int i = 0; 
-//         int j = n - 1; 
-//         while (i < j) {
-//             int tmp = coins[i];
-//             coins[i] = coins[j];
-//             coins[j] = tmp;
-//             i++;
-//             j--;
 //         }
 //     }
 // }

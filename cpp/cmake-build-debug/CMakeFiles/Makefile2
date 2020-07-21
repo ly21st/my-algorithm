@@ -62,6 +62,8 @@ all: CMakeFiles/gridIllumination2.dir/all
 all: CMakeFiles/longestCommonPrefix.dir/all
 all: CMakeFiles/reactor.dir/all
 all: CMakeFiles/mul_port_client_epoll.dir/all
+all: CMakeFiles/sync_http.dir/all
+all: CMakeFiles/async_http.dir/all
 
 .PHONY : all
 
@@ -76,6 +78,8 @@ clean: CMakeFiles/gridIllumination2.dir/clean
 clean: CMakeFiles/longestCommonPrefix.dir/clean
 clean: CMakeFiles/reactor.dir/clean
 clean: CMakeFiles/mul_port_client_epoll.dir/clean
+clean: CMakeFiles/sync_http.dir/clean
+clean: CMakeFiles/async_http.dir/clean
 
 .PHONY : clean
 
@@ -91,7 +95,7 @@ preinstall:
 CMakeFiles/merge.dir/all:
 	$(MAKE) -f CMakeFiles\merge.dir\build.make CMakeFiles/merge.dir/depend
 	$(MAKE) -f CMakeFiles\merge.dir\build.make CMakeFiles/merge.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles --progress-num=11,12 "Built target merge"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles --progress-num=13,14 "Built target merge"
 .PHONY : CMakeFiles/merge.dir/all
 
 # Build rule for subdir invocation for target.
@@ -145,7 +149,7 @@ CMakeFiles/MyCircularDeque.dir/clean:
 CMakeFiles/gridIllumination.dir/all:
 	$(MAKE) -f CMakeFiles\gridIllumination.dir\build.make CMakeFiles/gridIllumination.dir/depend
 	$(MAKE) -f CMakeFiles\gridIllumination.dir\build.make CMakeFiles/gridIllumination.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles --progress-num=3,4 "Built target gridIllumination"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles --progress-num=5,6 "Built target gridIllumination"
 .PHONY : CMakeFiles/gridIllumination.dir/all
 
 # Build rule for subdir invocation for target.
@@ -172,7 +176,7 @@ CMakeFiles/gridIllumination.dir/clean:
 CMakeFiles/isPalindrome.dir/all:
 	$(MAKE) -f CMakeFiles\isPalindrome.dir\build.make CMakeFiles/isPalindrome.dir/depend
 	$(MAKE) -f CMakeFiles\isPalindrome.dir\build.make CMakeFiles/isPalindrome.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles --progress-num=7,8 "Built target isPalindrome"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles --progress-num=9,10 "Built target isPalindrome"
 .PHONY : CMakeFiles/isPalindrome.dir/all
 
 # Build rule for subdir invocation for target.
@@ -199,7 +203,7 @@ CMakeFiles/isPalindrome.dir/clean:
 CMakeFiles/trap.dir/all:
 	$(MAKE) -f CMakeFiles\trap.dir\build.make CMakeFiles/trap.dir/depend
 	$(MAKE) -f CMakeFiles\trap.dir\build.make CMakeFiles/trap.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles --progress-num=17,18 "Built target trap"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles --progress-num=21,22 "Built target trap"
 .PHONY : CMakeFiles/trap.dir/all
 
 # Build rule for subdir invocation for target.
@@ -226,7 +230,7 @@ CMakeFiles/trap.dir/clean:
 CMakeFiles/twoSum.dir/all:
 	$(MAKE) -f CMakeFiles\twoSum.dir\build.make CMakeFiles/twoSum.dir/depend
 	$(MAKE) -f CMakeFiles\twoSum.dir\build.make CMakeFiles/twoSum.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles --progress-num=19,20 "Built target twoSum"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles --progress-num=23,24 "Built target twoSum"
 .PHONY : CMakeFiles/twoSum.dir/all
 
 # Build rule for subdir invocation for target.
@@ -253,7 +257,7 @@ CMakeFiles/twoSum.dir/clean:
 CMakeFiles/gridIllumination2.dir/all:
 	$(MAKE) -f CMakeFiles\gridIllumination2.dir\build.make CMakeFiles/gridIllumination2.dir/depend
 	$(MAKE) -f CMakeFiles\gridIllumination2.dir\build.make CMakeFiles/gridIllumination2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles --progress-num=5,6 "Built target gridIllumination2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles --progress-num=7,8 "Built target gridIllumination2"
 .PHONY : CMakeFiles/gridIllumination2.dir/all
 
 # Build rule for subdir invocation for target.
@@ -280,7 +284,7 @@ CMakeFiles/gridIllumination2.dir/clean:
 CMakeFiles/longestCommonPrefix.dir/all:
 	$(MAKE) -f CMakeFiles\longestCommonPrefix.dir\build.make CMakeFiles/longestCommonPrefix.dir/depend
 	$(MAKE) -f CMakeFiles\longestCommonPrefix.dir\build.make CMakeFiles/longestCommonPrefix.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles --progress-num=9,10 "Built target longestCommonPrefix"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles --progress-num=11,12 "Built target longestCommonPrefix"
 .PHONY : CMakeFiles/longestCommonPrefix.dir/all
 
 # Build rule for subdir invocation for target.
@@ -307,7 +311,7 @@ CMakeFiles/longestCommonPrefix.dir/clean:
 CMakeFiles/reactor.dir/all:
 	$(MAKE) -f CMakeFiles\reactor.dir\build.make CMakeFiles/reactor.dir/depend
 	$(MAKE) -f CMakeFiles\reactor.dir\build.make CMakeFiles/reactor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles --progress-num=15,16 "Built target reactor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles --progress-num=17,18 "Built target reactor"
 .PHONY : CMakeFiles/reactor.dir/all
 
 # Build rule for subdir invocation for target.
@@ -334,7 +338,7 @@ CMakeFiles/reactor.dir/clean:
 CMakeFiles/mul_port_client_epoll.dir/all:
 	$(MAKE) -f CMakeFiles\mul_port_client_epoll.dir\build.make CMakeFiles/mul_port_client_epoll.dir/depend
 	$(MAKE) -f CMakeFiles\mul_port_client_epoll.dir\build.make CMakeFiles/mul_port_client_epoll.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles --progress-num=13,14 "Built target mul_port_client_epoll"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles --progress-num=15,16 "Built target mul_port_client_epoll"
 .PHONY : CMakeFiles/mul_port_client_epoll.dir/all
 
 # Build rule for subdir invocation for target.
@@ -353,6 +357,60 @@ mul_port_client_epoll: CMakeFiles/mul_port_client_epoll.dir/rule
 CMakeFiles/mul_port_client_epoll.dir/clean:
 	$(MAKE) -f CMakeFiles\mul_port_client_epoll.dir\build.make CMakeFiles/mul_port_client_epoll.dir/clean
 .PHONY : CMakeFiles/mul_port_client_epoll.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/sync_http.dir
+
+# All Build rule for target.
+CMakeFiles/sync_http.dir/all:
+	$(MAKE) -f CMakeFiles\sync_http.dir\build.make CMakeFiles/sync_http.dir/depend
+	$(MAKE) -f CMakeFiles\sync_http.dir\build.make CMakeFiles/sync_http.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles --progress-num=19,20 "Built target sync_http"
+.PHONY : CMakeFiles/sync_http.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sync_http.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles 2
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/sync_http.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/sync_http.dir/rule
+
+# Convenience name for target.
+sync_http: CMakeFiles/sync_http.dir/rule
+
+.PHONY : sync_http
+
+# clean rule for target.
+CMakeFiles/sync_http.dir/clean:
+	$(MAKE) -f CMakeFiles\sync_http.dir\build.make CMakeFiles/sync_http.dir/clean
+.PHONY : CMakeFiles/sync_http.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/async_http.dir
+
+# All Build rule for target.
+CMakeFiles/async_http.dir/all:
+	$(MAKE) -f CMakeFiles\async_http.dir\build.make CMakeFiles/async_http.dir/depend
+	$(MAKE) -f CMakeFiles\async_http.dir\build.make CMakeFiles/async_http.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles --progress-num=3,4 "Built target async_http"
+.PHONY : CMakeFiles/async_http.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/async_http.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles 2
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/async_http.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\liyuan-github\my-algorithm\cpp\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/async_http.dir/rule
+
+# Convenience name for target.
+async_http: CMakeFiles/async_http.dir/rule
+
+.PHONY : async_http
+
+# clean rule for target.
+CMakeFiles/async_http.dir/clean:
+	$(MAKE) -f CMakeFiles\async_http.dir\build.make CMakeFiles/async_http.dir/clean
+.PHONY : CMakeFiles/async_http.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

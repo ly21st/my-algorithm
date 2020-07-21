@@ -138,11 +138,6 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-17" />
-    <option name="width" value="1938" />
-    <option name="height" value="1032" />
-  </component>
   <component name="ProjectId" id="1aJ38nZvvOBQXbX59eKW3V0h0cJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -263,6 +258,9 @@
       <workItem from="1589897919029" duration="286000" />
       <workItem from="1589898224734" duration="599000" />
       <workItem from="1592311306830" duration="635000" />
+      <workItem from="1594480711351" duration="505000" />
+      <workItem from="1594481231648" duration="593000" />
+      <workItem from="1594517358898" duration="1193000" />
     </task>
     <servers />
   </component>

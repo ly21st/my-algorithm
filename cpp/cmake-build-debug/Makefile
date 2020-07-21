@@ -239,6 +239,32 @@ mul_port_client_epoll/fast:
 	$(MAKE) -f CMakeFiles\mul_port_client_epoll.dir\build.make CMakeFiles/mul_port_client_epoll.dir/build
 .PHONY : mul_port_client_epoll/fast
 
+#=============================================================================
+# Target rules for targets named sync_http
+
+# Build rule for target.
+sync_http: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 sync_http
+.PHONY : sync_http
+
+# fast build rule for target.
+sync_http/fast:
+	$(MAKE) -f CMakeFiles\sync_http.dir\build.make CMakeFiles/sync_http.dir/build
+.PHONY : sync_http/fast
+
+#=============================================================================
+# Target rules for targets named async_http
+
+# Build rule for target.
+async_http: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 async_http
+.PHONY : async_http
+
+# fast build rule for target.
+async_http/fast:
+	$(MAKE) -f CMakeFiles\async_http.dir\build.make CMakeFiles/async_http.dir/build
+.PHONY : async_http/fast
+
 MyCircularDeque.obj: MyCircularDeque.cpp.obj
 
 .PHONY : MyCircularDeque.obj
@@ -346,6 +372,60 @@ isPalindrome.s: isPalindrome.cpp.s
 isPalindrome.cpp.s:
 	$(MAKE) -f CMakeFiles\isPalindrome.dir\build.make CMakeFiles/isPalindrome.dir/isPalindrome.cpp.s
 .PHONY : isPalindrome.cpp.s
+
+lingshengxueyuan/chap2_4/async_http.obj: lingshengxueyuan/chap2_4/async_http.c.obj
+
+.PHONY : lingshengxueyuan/chap2_4/async_http.obj
+
+# target to build an object file
+lingshengxueyuan/chap2_4/async_http.c.obj:
+	$(MAKE) -f CMakeFiles\async_http.dir\build.make CMakeFiles/async_http.dir/lingshengxueyuan/chap2_4/async_http.c.obj
+.PHONY : lingshengxueyuan/chap2_4/async_http.c.obj
+
+lingshengxueyuan/chap2_4/async_http.i: lingshengxueyuan/chap2_4/async_http.c.i
+
+.PHONY : lingshengxueyuan/chap2_4/async_http.i
+
+# target to preprocess a source file
+lingshengxueyuan/chap2_4/async_http.c.i:
+	$(MAKE) -f CMakeFiles\async_http.dir\build.make CMakeFiles/async_http.dir/lingshengxueyuan/chap2_4/async_http.c.i
+.PHONY : lingshengxueyuan/chap2_4/async_http.c.i
+
+lingshengxueyuan/chap2_4/async_http.s: lingshengxueyuan/chap2_4/async_http.c.s
+
+.PHONY : lingshengxueyuan/chap2_4/async_http.s
+
+# target to generate assembly for a file
+lingshengxueyuan/chap2_4/async_http.c.s:
+	$(MAKE) -f CMakeFiles\async_http.dir\build.make CMakeFiles/async_http.dir/lingshengxueyuan/chap2_4/async_http.c.s
+.PHONY : lingshengxueyuan/chap2_4/async_http.c.s
+
+lingshengxueyuan/chap2_4/sync_http.obj: lingshengxueyuan/chap2_4/sync_http.c.obj
+
+.PHONY : lingshengxueyuan/chap2_4/sync_http.obj
+
+# target to build an object file
+lingshengxueyuan/chap2_4/sync_http.c.obj:
+	$(MAKE) -f CMakeFiles\sync_http.dir\build.make CMakeFiles/sync_http.dir/lingshengxueyuan/chap2_4/sync_http.c.obj
+.PHONY : lingshengxueyuan/chap2_4/sync_http.c.obj
+
+lingshengxueyuan/chap2_4/sync_http.i: lingshengxueyuan/chap2_4/sync_http.c.i
+
+.PHONY : lingshengxueyuan/chap2_4/sync_http.i
+
+# target to preprocess a source file
+lingshengxueyuan/chap2_4/sync_http.c.i:
+	$(MAKE) -f CMakeFiles\sync_http.dir\build.make CMakeFiles/sync_http.dir/lingshengxueyuan/chap2_4/sync_http.c.i
+.PHONY : lingshengxueyuan/chap2_4/sync_http.c.i
+
+lingshengxueyuan/chap2_4/sync_http.s: lingshengxueyuan/chap2_4/sync_http.c.s
+
+.PHONY : lingshengxueyuan/chap2_4/sync_http.s
+
+# target to generate assembly for a file
+lingshengxueyuan/chap2_4/sync_http.c.s:
+	$(MAKE) -f CMakeFiles\sync_http.dir\build.make CMakeFiles/sync_http.dir/lingshengxueyuan/chap2_4/sync_http.c.s
+.PHONY : lingshengxueyuan/chap2_4/sync_http.c.s
 
 lingshengxueyuan/chap5_3/mul_port_client_epoll.obj: lingshengxueyuan/chap5_3/mul_port_client_epoll.c.obj
 
@@ -525,6 +605,8 @@ help:
 	@echo ... longestCommonPrefix
 	@echo ... reactor
 	@echo ... mul_port_client_epoll
+	@echo ... sync_http
+	@echo ... async_http
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... MyCircularDeque.obj
@@ -539,6 +621,12 @@ help:
 	@echo ... isPalindrome.obj
 	@echo ... isPalindrome.i
 	@echo ... isPalindrome.s
+	@echo ... lingshengxueyuan/chap2_4/async_http.obj
+	@echo ... lingshengxueyuan/chap2_4/async_http.i
+	@echo ... lingshengxueyuan/chap2_4/async_http.s
+	@echo ... lingshengxueyuan/chap2_4/sync_http.obj
+	@echo ... lingshengxueyuan/chap2_4/sync_http.i
+	@echo ... lingshengxueyuan/chap2_4/sync_http.s
 	@echo ... lingshengxueyuan/chap5_3/mul_port_client_epoll.obj
 	@echo ... lingshengxueyuan/chap5_3/mul_port_client_epoll.i
 	@echo ... lingshengxueyuan/chap5_3/mul_port_client_epoll.s

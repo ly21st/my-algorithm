@@ -402,7 +402,7 @@ void LogError(const char* _FLE,const char* _FUN,unsigned int _LNE,const char *fm
 
 	fprintf(
 			stdout,
-			"%s - PSID:%06u FILE:%s FUNC:%s LINE:%u SYEN:%d SYER:%s [MSG]- ",
+			"%s - [Error] PSID:%06u FILE:%s FUNC:%s LINE:%u SYEN:%d SYER:%s [MSG]- ",
 			timeNowWithMs(now), pid, _FLE, _FUN, _LNE,
 			errno,
 			strerror(errno));
@@ -423,7 +423,7 @@ void LogInfo(const char* _FLE,const char* _FUN,unsigned int _LNE,const char *fmt
 	timeNowWithMs(now);
 	fprintf(
 			stdout,
-			"%s - PSID:%06u FILE:%s FUNC:%s LINE:%u [MSG]- ",
+			"%s - [Info] PSID:%06u FILE:%s FUNC:%s LINE:%u [MSG]- ",
 			timeNowWithMs(now), pid, _FLE, _FUN, _LNE);
 	vfprintf(stdout,fmt,ap);
 	va_end(ap);
