@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+
 # 使用requests库获取豆瓣影评
 
 import requests
@@ -12,3 +14,6 @@ response = requests.get(myurl,headers=header)
 
 print(response.text)
 print(f'返回码是: {response.status_code}')
+
+
+
