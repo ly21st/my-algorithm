@@ -4,6 +4,7 @@ class UserInputError(Exception):
         self.errorinfo = ErrorInfo
     def __str__(self):
         return self.errorinfo
+    
 
 userinput = 'a'
 

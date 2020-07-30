@@ -6,10 +6,10 @@
 import pymysql
 
 dbInfo = {
-    'host' : 'localhost',
+    'host' : '10.8.4.121',
     'port' : 3306,
     'user' : 'root',
-    'password' : 'rootroot',
+    'password' : '123456',
     'db' : 'test'
 }
 
