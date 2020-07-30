@@ -1,3 +1,4 @@
+import java.util.Deque;
 import java.util.List;
 
 /*
@@ -69,7 +70,11 @@ class Solution {
         if (root.val == sum) {
             count++;
         }
-        
+        int size = res.size();
+        res.addLast(root.val);
+        for (int i = 0; i < size; i++) {
+            res.addLast(root.val + res.);
+        }
     }
 }
 // @lc code=end

@@ -18,3 +18,6 @@ add_executable(mul_port_client_epoll lingshengxueyuan/chap5_3/mul_port_client_ep
 
 add_executable(sync_http lingshengxueyuan/chap2_4/sync_http.c)
 add_executable(async_http lingshengxueyuan/chap2_4/async_http.c)
+
+add_executable(cfg lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.c)
+
