@@ -13,10 +13,8 @@ class MaoyanmoviePipeline:
 
     
     def process_item(self, item, spider):
-        title = item['title']
-        type = item['type']
-        film_date = item['film_date']
-
-        move_data = [[title, type, film_date]]
-        df = pd.DataFrame(data=movie_list, columns=('标题', '类型', '上映时间'))
-        df.to_csv("./movies.csv", encoding='utf8', index=False, header=False, mode='a+')
+        if not item:
+            return
+        move_data = [[item['title'], item['film_type'], item['film_date']]]
+        df = pd.DataFrame(data=move_data, columns=('标题', '类型', '上映时间'))
+        df.to_csv("./movies.csv", encoding='gbk', index=False, header=False, mode='a+')
