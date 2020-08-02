@@ -10,7 +10,7 @@ try:
     time.sleep(1)
 
     browser.switch_to_frame(browser.find_elements_by_tag_name('iframe')[0])
-    btm1 = browser.find_element_by_xpath('/html/body/div[1]/div[1]/ul[1]/li[2]')
+    btm1 = browser.find_element_by_xpath('/html/body/div[1]/div[1]/ul[1]/li[2]')   
     btm1.click()
 
     browser.find_element_by_xpath('//*[@id="username"]').send_keys('15055495@qq.com')
@@ -24,6 +24,6 @@ try:
 
 except Exception as e:
     print(e)
-finally:    
-    browser.close()
+# finally:
+#     browser.close()
     

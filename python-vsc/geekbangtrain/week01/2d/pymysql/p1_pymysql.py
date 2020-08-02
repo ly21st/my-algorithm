@@ -4,6 +4,7 @@
 # 一般流程
 # 开始-创建connection-获取cursor-CRUD(查询并获取数据)-关闭cursor-关闭connection-结束
 import pymysql
+import traceback
 
 dbInfo = {
     'host' : '10.8.4.121',
@@ -43,9 +44,16 @@ class ConnDB(object):
                 cur.execute(command)
                 result.append(cur.fetchone())
             # 关闭游标
+
+            # cur.execute('drop table if exists `%s`', ('aa',))
+            # cur.execute('create table %s(id int)', ('aa',))
+            # title = 'lilei'
+            # cur.execute('insert into cc(`name`) values("%s")', (title,))
+
             cur.close()
             conn.commit()
-        except:
+        except Exception as e:
+            print(traceback.format_exc())
             conn.rollback()
         # 关闭数据库连接
         conn.close()

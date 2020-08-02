@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from maoyanmovie.proxyip import get_proxyips
+
 # Scrapy settings for maoyanmovie project
 #
 # For simplicity, this file contains only settings considered important or
@@ -17,19 +19,21 @@ NEWSPIDER_MODULE = 'maoyanmovie.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'maoyanmovie (+http://www.yourdomain.com)'
-USER_AGENT_LIST=[
-'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36'
-    "Mozilla/5.0 (Windows NT 6.2) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1062.0 Safari/536.3",
-    "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1062.0 Safari/536.3",
-    "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; 360SE)",
-    "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1061.1 Safari/536.3",
-    "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1061.1 Safari/536.3",
-    "Mozilla/5.0 (Windows NT 6.2) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1061.0 Safari/536.3",
-    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.24 (KHTML, like Gecko) Chrome/19.0.1055.1 Safari/535.24",
-    "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/535.24 (KHTML, like Gecko) Chrome/19.0.1055.1 Safari/535.24"
-]
-import random
-USER_AGENT = random.choice(USER_AGENT_LIST)
+USER_AGENT = 'proxyspider (+http://www.maoyan.com)'
+
+# USER_AGENT_LIST=[
+# 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36'
+#     "Mozilla/5.0 (Windows NT 6.2) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1062.0 Safari/536.3",
+#     "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1062.0 Safari/536.3",
+#     "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; 360SE)",
+#     "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1061.1 Safari/536.3",
+#     "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1061.1 Safari/536.3",
+#     "Mozilla/5.0 (Windows NT 6.2) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1061.0 Safari/536.3",
+#     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.24 (KHTML, like Gecko) Chrome/19.0.1055.1 Safari/535.24",
+#     "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/535.24 (KHTML, like Gecko) Chrome/19.0.1055.1 Safari/535.24"
+# ]
+# import random
+# USER_AGENT = random.choice(USER_AGENT_LIST)
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -71,6 +75,18 @@ DEFAULT_REQUEST_HEADERS = {
 #DOWNLOADER_MIDDLEWARES = {
 #    'maoyanmovie.middlewares.MaoyanmovieDownloaderMiddleware': 543,
 #}
+DOWNLOADER_MIDDLEWARES = {
+    'maoyanmovie.middlewares.MaoyanmovieDownloaderMiddleware': 543,
+    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': None,
+    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+    'maoyanmovie.middlewares.RandomHttpProxyMiddleware': 400,
+}
+
+HTTP_PROXY_LIST = [
+    #  'http://52.179.231.206:80',
+    #  'http://95.0.194.241:9090',
+]
+HTTP_PROXY_LIST.extend(get_proxyips())
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
