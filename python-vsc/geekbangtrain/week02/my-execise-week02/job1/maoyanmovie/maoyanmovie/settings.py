@@ -86,7 +86,7 @@ HTTP_PROXY_LIST = [
     #  'http://52.179.231.206:80',
     #  'http://95.0.194.241:9090',
 ]
-HTTP_PROXY_LIST.extend(get_proxyips())
+# HTTP_PROXY_LIST.extend(get_proxyips())
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html

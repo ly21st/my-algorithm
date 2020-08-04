@@ -65,4 +65,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/mul_port_client_epoll.dir/DependInfo.cmake"
   "CMakeFiles/sync_http.dir/DependInfo.cmake"
   "CMakeFiles/async_http.dir/DependInfo.cmake"
+  "CMakeFiles/cfg.dir/DependInfo.cmake"
   )

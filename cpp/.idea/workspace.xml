@@ -2,16 +2,19 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="cp" targetName="twoSum" />
-      <config projectName="cp" targetName="gridIllumination" />
-      <config projectName="cp" targetName="merge" />
-      <config projectName="cp" targetName="longestCommonPrefix" />
       <config projectName="cp" targetName="gridIllumination2" />
-      <config projectName="cp" targetName="MyCircularDeque" />
-      <config projectName="cp" targetName="trap" />
-      <config projectName="cp" targetName="mul_port_client_epoll" />
       <config projectName="cp" targetName="isPalindrome" />
+      <config projectName="cp" targetName="mul_port_client_epoll" />
+      <config projectName="cp" targetName="longestCommonPrefix" />
+      <config projectName="cp" targetName="twoSum" />
+      <config projectName="cp" targetName="sync_http" />
+      <config projectName="cp" targetName="gridIllumination" />
       <config projectName="cp" targetName="reactor" />
+      <config projectName="cp" targetName="async_http" />
+      <config projectName="cp" targetName="cfg" />
+      <config projectName="cp" targetName="trap" />
+      <config projectName="cp" targetName="merge" />
+      <config projectName="cp" targetName="MyCircularDeque" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -20,7 +23,25 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65c40f1c-de2a-42eb-a477-9c1e91fe9212" name="Default Changelist" comment="" />
+    <list default="true" id="65c40f1c-de2a-42eb-a477-9c1e91fe9212" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gridIllumination.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gridIllumination.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gridIllumination2.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gridIllumination2.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/isPalindrome.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/isPalindrome.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/longestCommonPrefix.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/longestCommonPrefix.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/merge.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/merge.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mul_port_client_epoll.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mul_port_client_epoll.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/reactor.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/reactor.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/trap.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/trap.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/twoSum.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/twoSum.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cp.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cp.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python-vsc/geekbangtrain/week02/my-execise-week02/job1/maoyanmovie/maoyanmovie/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../python-vsc/geekbangtrain/week02/my-execise-week02/job1/maoyanmovie/maoyanmovie/settings.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,12 +56,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="y" value="-12" />
-    <option name="width" value="1848" />
-    <option name="height" value="942" />
-  </component>
   <component name="ProjectId" id="1a57eU2me32mpblpKxckxRjHy4O" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -54,7 +69,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="F:/clion_workspace/my_proj" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -73,6 +88,16 @@
   </component>
   <component name="RunManager" selected="CMake Application.MyCircularDeque">
     <configuration name="MyCircularDeque" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cp" TARGET_NAME="MyCircularDeque" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cp" RUN_TARGET_NAME="MyCircularDeque">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="async_http" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cp" TARGET_NAME="async_http" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cp" RUN_TARGET_NAME="async_http">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="cfg" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cp" TARGET_NAME="cfg" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cp" RUN_TARGET_NAME="cfg">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -112,6 +137,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="sync_http" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cp" TARGET_NAME="sync_http" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cp" RUN_TARGET_NAME="sync_http">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="trap" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cp" TARGET_NAME="trap" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cp" RUN_TARGET_NAME="trap">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -124,6 +154,8 @@
     </configuration>
     <list>
       <item itemvalue="CMake Application.MyCircularDeque" />
+      <item itemvalue="CMake Application.async_http" />
+      <item itemvalue="CMake Application.cfg" />
       <item itemvalue="CMake Application.gridIllumination" />
       <item itemvalue="CMake Application.gridIllumination2" />
       <item itemvalue="CMake Application.isPalindrome" />
@@ -131,6 +163,7 @@
       <item itemvalue="CMake Application.merge" />
       <item itemvalue="CMake Application.mul_port_client_epoll" />
       <item itemvalue="CMake Application.reactor" />
+      <item itemvalue="CMake Application.sync_http" />
       <item itemvalue="CMake Application.trap" />
       <item itemvalue="CMake Application.twoSum" />
     </list>
@@ -171,6 +204,7 @@
       <workItem from="1593497348033" duration="11786000" />
       <workItem from="1593523779235" duration="4245000" />
       <workItem from="1595661964591" duration="16000" />
+      <workItem from="1596465391770" duration="671000" />
     </task>
     <servers />
   </component>

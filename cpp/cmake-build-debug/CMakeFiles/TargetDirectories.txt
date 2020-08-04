@@ -10,5 +10,6 @@ E:/liyuan-github/my-algorithm/cpp/cmake-build-debug/CMakeFiles/reactor.dir
 E:/liyuan-github/my-algorithm/cpp/cmake-build-debug/CMakeFiles/mul_port_client_epoll.dir
 E:/liyuan-github/my-algorithm/cpp/cmake-build-debug/CMakeFiles/sync_http.dir
 E:/liyuan-github/my-algorithm/cpp/cmake-build-debug/CMakeFiles/async_http.dir
+E:/liyuan-github/my-algorithm/cpp/cmake-build-debug/CMakeFiles/cfg.dir
 E:/liyuan-github/my-algorithm/cpp/cmake-build-debug/CMakeFiles/edit_cache.dir
 E:/liyuan-github/my-algorithm/cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir

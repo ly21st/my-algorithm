@@ -265,6 +265,19 @@ async_http/fast:
 	$(MAKE) -f CMakeFiles\async_http.dir\build.make CMakeFiles/async_http.dir/build
 .PHONY : async_http/fast
 
+#=============================================================================
+# Target rules for targets named cfg
+
+# Build rule for target.
+cfg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 cfg
+.PHONY : cfg
+
+# fast build rule for target.
+cfg/fast:
+	$(MAKE) -f CMakeFiles\cfg.dir\build.make CMakeFiles/cfg.dir/build
+.PHONY : cfg/fast
+
 MyCircularDeque.obj: MyCircularDeque.cpp.obj
 
 .PHONY : MyCircularDeque.obj
@@ -372,6 +385,33 @@ isPalindrome.s: isPalindrome.cpp.s
 isPalindrome.cpp.s:
 	$(MAKE) -f CMakeFiles\isPalindrome.dir\build.make CMakeFiles/isPalindrome.dir/isPalindrome.cpp.s
 .PHONY : isPalindrome.cpp.s
+
+lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.obj: lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.c.obj
+
+.PHONY : lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.obj
+
+# target to build an object file
+lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.c.obj:
+	$(MAKE) -f CMakeFiles\cfg.dir\build.make CMakeFiles/cfg.dir/lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.c.obj
+.PHONY : lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.c.obj
+
+lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.i: lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.c.i
+
+.PHONY : lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.i
+
+# target to preprocess a source file
+lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.c.i:
+	$(MAKE) -f CMakeFiles\cfg.dir\build.make CMakeFiles/cfg.dir/lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.c.i
+.PHONY : lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.c.i
+
+lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.s: lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.c.s
+
+.PHONY : lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.s
+
+# target to generate assembly for a file
+lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.c.s:
+	$(MAKE) -f CMakeFiles\cfg.dir\build.make CMakeFiles/cfg.dir/lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.c.s
+.PHONY : lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.c.s
 
 lingshengxueyuan/chap2_4/async_http.obj: lingshengxueyuan/chap2_4/async_http.c.obj
 
@@ -607,6 +647,7 @@ help:
 	@echo ... mul_port_client_epoll
 	@echo ... sync_http
 	@echo ... async_http
+	@echo ... cfg
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... MyCircularDeque.obj
@@ -621,6 +662,9 @@ help:
 	@echo ... isPalindrome.obj
 	@echo ... isPalindrome.i
 	@echo ... isPalindrome.s
+	@echo ... lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.obj
+	@echo ... lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.i
+	@echo ... lingshengxueyuan/HuLianWangYunPan/0voice-cloud-disk/common/cfg.s
 	@echo ... lingshengxueyuan/chap2_4/async_http.obj
 	@echo ... lingshengxueyuan/chap2_4/async_http.i
 	@echo ... lingshengxueyuan/chap2_4/async_http.s
