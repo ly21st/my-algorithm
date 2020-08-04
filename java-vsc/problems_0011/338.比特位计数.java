@@ -39,7 +39,8 @@ import java.util.List;
  */
 
 // @lc code=start
-
+// 动态规划+最低有效位
+// p(x) = p(x&(x-1)) + 1
 class Solution {
     public int[] countBits(int num) {
         if (num <= 0) {
@@ -51,16 +52,8 @@ class Solution {
     }
 
     public void one_count(int num, int []res) {
-        int count = 0;
-        int i = 0; 
-        int k = 1;
-        int j = 2;
-        while (k <= num) {
-            for (i = 0; i < j && i+k <= num; i++) {
-                res[i + k] = res[i] + 1;
-            }
-            k <<= 1;
-            j <<= 1;
+        for (int i = 1; i <= num; i++) {
+            res[i] = res[i&(i-1)] + 1;
         }
     }
 }
@@ -87,5 +80,53 @@ class Solution {
 //             count++;
 //         }
 //         return count;
+//     }
+// }
+
+
+
+
+// 动态规划+最高有效位
+// class Solution {
+//     public int[] countBits(int num) {
+//         if (num <= 0) {
+//             return new int[]{0};
+//         }
+//         int []output = new int[num+1];
+//         one_count(num, output);
+//         return output;
+//     }
+
+//     public void one_count(int num, int []res) {
+//         int i = 0; 
+//         int k = 1;
+//         while (k <= num) {
+//             for (i = 0; i < k && i+k <= num; i++) {
+//                 res[i + k] = res[i] + 1;
+//             }
+//             k <<= 1;
+//         }
+//     }
+// }
+
+
+
+
+// 动态规划+最低有效位
+// p(x) = p(x/2) + x % 2
+// class Solution {
+//     public int[] countBits(int num) {
+//         if (num <= 0) {
+//             return new int[]{0};
+//         }
+//         int []output = new int[num+1];
+//         one_count(num, output);
+//         return output;
+//     }
+
+//     public void one_count(int num, int []res) {
+//         for (int i = 1; i <= num; i++) {
+//             res[i] = res[i/2] + (i & 1);
+//         }
 //     }
 // }
