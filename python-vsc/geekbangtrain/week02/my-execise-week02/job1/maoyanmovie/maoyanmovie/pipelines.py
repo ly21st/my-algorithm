@@ -86,4 +86,4 @@ class MaoyanmoviePipeline:
         film_type = item['film_type']
         film_date = item['film_date']
         dbConnObj.execute(
-            'insert into movie(`title`, `film_type`, `film_date`) values("%s", "%s", "%s")' % (title, film_type, film_date))
+            'insert into movie(`title`, `film_type`, `film_date`) values(%s, %s, %s)', (title, film_type, film_date))
