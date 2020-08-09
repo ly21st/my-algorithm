@@ -11,4 +11,5 @@ for i in range(10):
     t = threading.Thread(target = addone)
     t.start()
 
+time.sleep(2)
 print('main thread stop')

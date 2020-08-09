@@ -11,6 +11,8 @@ def run(name):
     sleep(random.choice([1, 2, 3, 4]))
     end = time()
     print("%s子进程结束，进程ID：%d。耗时%0.2f" % (name, os.getpid(), end-start))
+    # os.stdout.flush()
+    # os.stderr.flush()
 
 
 if __name__ == "__main__":
