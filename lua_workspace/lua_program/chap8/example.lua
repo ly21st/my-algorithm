@@ -1,0 +1,5 @@
+-- function getlabel()
+--     return function () goto L1 end
+--     ::L1::
+--         return 0
+-- end

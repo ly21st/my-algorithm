@@ -13,8 +13,15 @@ pd.read_table( r'file.txt' , sep = ' ')
 
 import pymysql
 sql  =  'SELECT *  FROM mytable'
-conn = pymysql.connect('ip','name','pass','dbname','charset=utf8')
-df = pd.read_sql(sql,conn)
+conn = pymysql.connect('ip', 'name', 'pass', 'dbname', 'charset=utf8')
+df = pd.read_sql(sql, conn)
+
+
+
+sql  =  'SELECT *  FROM users'
+conn  = conn = pymysql.connect('10.8.4.121', 'root', '123456', 'db', charset='utf8')
+df = pd.read_sql(sql, conn)
+
 
 
 # 熟悉数据
