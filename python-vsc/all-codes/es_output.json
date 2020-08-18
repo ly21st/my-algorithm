@@ -1,0 +1,154 @@
+
+------------------------
+time:1597718472.5030944
+2020-08-18 10:41:12:503
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:0
+
+------------------------
+time:1597718482.5313962
+2020-08-18 10:41:22:531
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:0
+
+------------------------
+time:1597718492.5486255
+2020-08-18 10:41:32:548
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:0
+
+------------------------
+time:1597718789.2308328
+2020-08-18 10:46:29:230
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:0.0, throughput:0
+
+------------------------
+time:1597718799.2470644
+2020-08-18 10:46:39:247
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:10.016231536865234, throughput:0
+
+------------------------
+time:1597718809.259307
+2020-08-18 10:46:49:259
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:20.02847409248352, throughput:0
+
+------------------------
+time:1597718819.2796621
+2020-08-18 10:46:59:279
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:30.048829317092896, throughput:0
+
+------------------------
+time:1597718829.3014328
+2020-08-18 10:47:09:301
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:40.0706000328064, throughput:0
+
+------------------------
+time:1597718839.329642
+2020-08-18 10:47:19:329
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:50.098809242248535, throughput:0
+
+------------------------
+time:1597718849.3498542
+2020-08-18 10:47:29:349
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:60.11902141571045, throughput:0
+
+------------------------
+time:1597718859.3680804
+2020-08-18 10:47:39:368
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:70.13724756240845, throughput:0
+
+------------------------
+time:1597718869.387308
+2020-08-18 10:47:49:387
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:80.15647506713867, throughput:0
+
+------------------------
+time:1597718879.411515
+2020-08-18 10:47:59:411
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:90.18068218231201, throughput:0
+
+------------------------
+time:1597718889.4370337
+2020-08-18 10:48:09:437
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:100.20620083808899, throughput:0
+
+------------------------
+time:1597718899.4581842
+2020-08-18 10:48:19:458
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:110.22735142707825, throughput:0
+
+------------------------
+time:1597718909.478777
+2020-08-18 10:48:29:478
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:120.24794411659241, throughput:0
+
+------------------------
+time:1597718919.4989986
+2020-08-18 10:48:39:498
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:130.26816582679749, throughput:0
+
+------------------------
+time:1597718929.5192184
+2020-08-18 10:48:49:519
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:140.28838562965393, throughput:0
+
+------------------------
+time:1597718939.5415204
+2020-08-18 10:48:59:541
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:150.31068754196167, throughput:0
+
+------------------------
+time:1597718949.5627446
+2020-08-18 10:49:09:562
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:160.33191180229187, throughput:0
+
+------------------------
+time:1597718959.5823388
+2020-08-18 10:49:19:582
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:170.35150599479675, throughput:0
+
+------------------------
+time:1597718969.606101
+2020-08-18 10:49:29:606
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:180.3752682209015, throughput:0
+
+------------------------
+time:1597718979.6304033
+2020-08-18 10:49:39:630
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:190.3995704650879, throughput:0
+
+------------------------
+time:1597718989.6569705
+2020-08-18 10:49:49:656
+{"_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 33269590, "deleted": 0}, "store": {"size_in_bytes": 9141378396}}, "total": {"docs": {"count": 66539180, "deleted": 0}, "store": {"size_in_bytes": 18264167241}}}}
+primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:200.42613768577576, throughput:0
+{"time": 1597732294.2285743, "time_str": "2020-08-18 14:31:34:228", "_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 42347257, "deleted": 0}, "store": {"size_in_bytes": 11896613683}}, "total": {"docs": {"count": 84694468, "deleted": 0}, "store": {"size_in_bytes": 23893666297}}}, "stats": "\nprimaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:0.0, throughput:0\n"}
+{"time": 1597732304.2487967, "time_str": "2020-08-18 14:31:44:248", "_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 42350929, "deleted": 0}, "store": {"size_in_bytes": 11897784187}}, "total": {"docs": {"count": 84701859, "deleted": 0}, "store": {"size_in_bytes": 23895966576}}}, "stats": "\nprimaries bytes:1170504, primaries docs:3672, total bytes:2300279, total docs:7391, time consuming:10.020222425460815, throughput:116814.17340854788\n"}
+{"time": 1597732314.2620378, "time_str": "2020-08-18 14:31:54:262", "_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 42359295, "deleted": 0}, "store": {"size_in_bytes": 11899425981}}, "total": {"docs": {"count": 84718507, "deleted": 0}, "store": {"size_in_bytes": 23904770324}}}, "stats": "\nprimaries bytes:2812298, primaries docs:12038, total bytes:11104027, total docs:24039, time consuming:20.03346347808838, throughput:140380.01981414517\n"}
+{"time": 1597732478.5877404, "time_str": "2020-08-18 14:34:38:587", "_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 42506217, "deleted": 0}, "store": {"size_in_bytes": 11968067245}}, "total": {"docs": {"count": 85012591, "deleted": 0}, "store": {"size_in_bytes": 24095351891}}}, "stats": "primaries bytes:0, primaries docs:0, total bytes:0, total docs:0, time consuming:0.0, throughput:0"}
+{"time": 1597732488.607989, "time_str": "2020-08-18 14:34:48:607", "_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 42520518, "deleted": 0}, "store": {"size_in_bytes": 11970211820}}, "total": {"docs": {"count": 85040784, "deleted": 0}, "store": {"size_in_bytes": 24082823800}}}, "stats": "primaries bytes:2144575, primaries docs:14301, total bytes:-12528091, total docs:28193, time consuming:10.020248651504517, throughput:214024.1299978117"}
+{"time": 1597732498.6181197, "time_str": "2020-08-18 14:34:58:618", "_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 42552708, "deleted": 0}, "store": {"size_in_bytes": 11996534516}}, "total": {"docs": {"count": 85105349, "deleted": 0}, "store": {"size_in_bytes": 24108321862}}}, "stats": "primaries bytes:28467271, primaries docs:46491, total bytes:12969971, total docs:92758, time consuming:20.03037929534912, throughput:1421204.7899966552"}
+{"time": 1597732508.636334, "time_str": "2020-08-18 14:35:08:636", "_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 42552708, "deleted": 0}, "store": {"size_in_bytes": 12000054493}}, "total": {"docs": {"count": 85105349, "deleted": 0}, "store": {"size_in_bytes": 24115329411}}}, "stats": "primaries bytes:31987248, primaries docs:46491, total bytes:19977520, total docs:92758, time consuming:30.048593521118164, throughput:1064517.3118508642"}
+{"time": 1597732902.0291307, "time_str": "2020-08-18 14:41:42:029", "_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 43058570, "deleted": 0}, "store": {"size_in_bytes": 12709967353}}, "total": {"docs": {"count": 86117082, "deleted": 0}, "store": {"size_in_bytes": 26084949363}}}, "stats": {"primary_bytes": 0, "primary_docs": 0, "total_bytes": 0, "total_docs": 0, "diff_time": 0.0, "throughput": 0}}
+{"time": 1597732912.0573297, "time_str": "2020-08-18 14:41:52:057", "_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 43058570, "deleted": 0}, "store": {"size_in_bytes": 12753922435}}, "total": {"docs": {"count": 86117082, "deleted": 0}, "store": {"size_in_bytes": 26131409476}}}, "stats": {"primary_bytes": 43955082, "primary_docs": 0, "total_bytes": 46460113, "total_docs": 0, "diff_time": 10.028198957443237, "throughput": 4383148.179103008}}
+{"time": 1597732922.075558, "time_str": "2020-08-18 14:42:02:075", "_shards": {"total": 12, "successful": 12, "failed": 0}, "_all": {"primaries": {"docs": {"count": 43085485, "deleted": 0}, "store": {"size_in_bytes": 12834795962}}, "total": {"docs": {"count": 86170526, "deleted": 0}, "store": {"size_in_bytes": 26197538442}}}, "stats": {"primary_bytes": 124828609, "primary_docs": 26915, "total_bytes": 112589079, "total_docs": 53444, "diff_time": 20.046427249908447, "throughput": 6226975.38288625}}

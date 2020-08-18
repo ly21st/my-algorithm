@@ -20,7 +20,9 @@ df
 # 2020-01-12 -0.864941 -0.358934 -0.203868 -1.191186
 
 import matplotlib.pyplot as plt
-plt.plot(df.index, df['A'], )
+# plt.plot(df.index, df['A'], )
+# 一张图多条线
+plt.plot(df.index, df[['A', 'C']], )
 plt.show()
 
 plt.plot(df.index, df['A'], 
