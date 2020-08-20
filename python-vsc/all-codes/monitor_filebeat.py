@@ -5,6 +5,7 @@ import requests
 import traceback
 import datetime
 import json
+import copy
 
 
 class Result(object):
@@ -14,7 +15,7 @@ class Result(object):
         self.res = {}
 
 
-def get_es_data_and_save(url, fp, result):
+def get_filebeat_data_and_save(url, fp, result, ip):
     res = {}
 
     try:
@@ -25,6 +26,7 @@ def get_es_data_and_save(url, fp, result):
         res['timestamp'] = now_time
         res['datetime'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S:%f')[:-3]
         res['time'] = datetime.datetime.now().strftime('%H:%M:%S:%f')[:-3]
+        res['ip'] = ip
 
         # 获取es统计
         response = requests.get(url)
@@ -35,37 +37,40 @@ def get_es_data_and_save(url, fp, result):
 
         body = response.json()
         # print(json.dumps(body, indent=4))
-        res['_shards'] = body['_shards']
-        res['_all'] = body['_all']
 
         # 计算统计信息
-        if result.init_res:
-            primary_bytes = res['_all']['primaries']['store']['size_in_bytes'] - \
-                            result.init_res['_all']['primaries']['store'][
-                                'size_in_bytes']
-            primary_docs = res['_all']['primaries']['docs']['count'] - result.init_res['_all']['primaries']['docs']['count']
+        res['stats'] = {}
+        res['stats']['uptime_ms'] = body['beat']['info']['uptime']['ms']
+        write_bytes = body['libbeat']['output']['write']['bytes']
+        res['stats']['write_bytes'] = write_bytes
 
-            total_bytes = res['_all']['total']['store']['size_in_bytes'] - result.init_res['_all']['total']['store'][
-                'size_in_bytes']
-            total_docs = res['_all']['total']['docs']['count'] - result.init_res['_all']['total']['docs']['count']
+        rss = body['beat']['memstats']['rss']
+        res['stats']['rss'] = rss
+
+        if result.init_res:
+            diff_uptime_ms = res['stats']['uptime_ms'] - result.init_res['stats']['uptime_ms']
+            res['stats']['diff_uptime_sec'] = diff_uptime_ms / 1000.0
+            if diff_uptime_ms < 0:
+                res['stats']['restart'] = (res['stats'].get('restart') or 0) + 1
+                result.init_res = res
+
+            diff_write_bytes = write_bytes - result.init_res['stats']['write_bytes']
+            res['stats']['diff_write_bytes'] = diff_write_bytes
 
             diff_time = now_time - result.init_res['timestamp']
-            throughput = 0
-            if primary_bytes and diff_time:
-                throughput = primary_bytes * 1.0 / diff_time
-            res['stats'] = {}
-            res['stats']['primary_bytes'] = primary_bytes
-            res['stats']['primary_docs'] = primary_docs
-            res['stats']['total_bytes'] = total_bytes
-            res['stats']['total_docs'] = total_docs
             res['stats']['diff_time'] = diff_time
+
+            throughput = 0
+            if diff_time:
+                throughput = diff_write_bytes * 1.0 / diff_time
             res['stats']['throughput'] = throughput
         else:
             result.init_res = res
 
+        result.last_res = res
         print(json.dumps(res, ensure_ascii=False, indent=4))
         # json.dump(res, fp=fp, ensure_ascii=False, indent=4)
-        # fp.write('\n')
+        fp.write('\n')
         fp.flush()
     except Exception as e:
         print(traceback.format_exc())
@@ -73,12 +78,18 @@ def get_es_data_and_save(url, fp, result):
 
 if __name__ == '__main__':
     try:
-        result = Result()
-        url = "http://10.8.4.43:30093/_stats/store,docs?index=afa*"
-        # url = "http://10.8.4.13:30093/_stats/store,docs?index=.monitoring-es*"
-        fp = open("es_output.json", "a+", encoding='utf-8')
+        urls = ["http://10.8.4.13:5066/stats", "http://10.8.4.43:5066/stats", "http://10.8.4.73:5066/stats"]
+        outputs = ["filebeat13.json", "filebeat43.json", "filebeat73.json"]
+        fps = []
+        for output in outputs:
+            fp = open(output, "a+", encoding='utf-8')
+            fps.append(fp)
+        init_res_list = [Result(), Result(), Result()]
+        ips = ['10.8.4.13', '10.8.4.43', '10.8.4.73']
         while True:
-            get_es_data_and_save(url, fp, result)
+            for i in range(len(urls)):
+                get_filebeat_data_and_save(urls[i], fps[i], init_res_list[i], ips[i])
+
             time.sleep(10)
     except Exception as e:
         print(traceback.format_exc())
