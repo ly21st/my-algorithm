@@ -18,8 +18,6 @@ def get_es_data_and_save(url, fp, result):
     res = {}
 
     try:
-        # print('------------------------')
-        # print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S:%f')[:-3])
         # 获取以及输出时间
         now_time = time.time()
         res['timestamp'] = now_time
@@ -41,9 +39,9 @@ def get_es_data_and_save(url, fp, result):
         # 计算统计信息
         if result.init_res:
             primary_bytes = res['_all']['primaries']['store']['size_in_bytes'] - \
-                            result.init_res['_all']['primaries']['store'][
-                                'size_in_bytes']
-            primary_docs = res['_all']['primaries']['docs']['count'] - result.init_res['_all']['primaries']['docs']['count']
+                            result.init_res['_all']['primaries']['store']['size_in_bytes']
+            primary_docs = res['_all']['primaries']['docs']['count'] - result.init_res['_all']['primaries']['docs'][
+                'count']
 
             total_bytes = res['_all']['total']['store']['size_in_bytes'] - result.init_res['_all']['total']['store'][
                 'size_in_bytes']
@@ -51,7 +49,7 @@ def get_es_data_and_save(url, fp, result):
 
             diff_time = now_time - result.init_res['timestamp']
             throughput = 0
-            if primary_bytes and diff_time:
+            if diff_time:
                 throughput = primary_bytes * 1.0 / diff_time
             res['stats'] = {}
             res['stats']['primary_bytes'] = primary_bytes
@@ -63,9 +61,23 @@ def get_es_data_and_save(url, fp, result):
         else:
             result.init_res = res
 
+        if result.last_res:
+            recent_time_diff = res['timestamp'] - result.last_res['timestamp']
+            if recent_time_diff:
+                recent_primary_throughput = (res['_all']['primaries']['store']['size_in_bytes'] - \
+                                             result.last_res['_all']['primaries']['store'][
+                                                 'size_in_bytes']) / recent_time_diff
+                recent_total_throughput = (res['_all']['total']['store']['size_in_bytes'] -
+                                           result.last_res['_all']['total']['store'][
+                                               'size_in_bytes']) / recent_time_diff
+                res['stats']['recent_primary_throughput'] = recent_primary_throughput
+                res['stats']['recent_total_throughput'] = recent_total_throughput
+
+        result.last_res = res
+
         print(json.dumps(res, ensure_ascii=False, indent=4))
-        # json.dump(res, fp=fp, ensure_ascii=False, indent=4)
-        # fp.write('\n')
+        json.dump(res, fp=fp, ensure_ascii=False, indent=4)
+        fp.write('\n')
         fp.flush()
     except Exception as e:
         print(traceback.format_exc())
