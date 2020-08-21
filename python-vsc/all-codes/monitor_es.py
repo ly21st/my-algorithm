@@ -47,17 +47,17 @@ def get_es_data_and_save(url, fp, result):
                 'size_in_bytes']
             total_docs = res['_all']['total']['docs']['count'] - result.init_res['_all']['total']['docs']['count']
 
-            diff_time = now_time - result.init_res['timestamp']
+            run_times = now_time - result.init_res['timestamp']
             throughput = 0
-            if diff_time:
-                throughput = primary_bytes * 1.0 / diff_time
+            if run_times:
+                throughput = primary_bytes * 1.0 / run_times
             res['stats'] = {}
             res['stats']['primary_bytes'] = primary_bytes
             res['stats']['primary_docs'] = primary_docs
             res['stats']['total_bytes'] = total_bytes
             res['stats']['total_docs'] = total_docs
-            res['stats']['diff_time'] = diff_time
-            res['stats']['throughput'] = throughput
+            res['stats']['run_times'] = run_times
+            res['stats']['throughput'] = throughput / 1024
         else:
             result.init_res = res
 
@@ -70,11 +70,11 @@ def get_es_data_and_save(url, fp, result):
                 recent_total_throughput = (res['_all']['total']['store']['size_in_bytes'] -
                                            result.last_res['_all']['total']['store'][
                                                'size_in_bytes']) / recent_time_diff
-                res['stats']['recent_primary_throughput'] = recent_primary_throughput
-                res['stats']['recent_total_throughput'] = recent_total_throughput
+                res['stats']['recent_primary_throughput'] = recent_primary_throughput / 1024
+                res['stats']['recent_total_throughput'] = recent_total_throughput / 1024
 
         result.last_res = res
-
+        result.res = res
         print(json.dumps(res, ensure_ascii=False, indent=4))
         json.dump(res, fp=fp, ensure_ascii=False, indent=4)
         fp.write('\n')

@@ -5,7 +5,7 @@ import requests
 import traceback
 import datetime
 import json
-import copy
+import urllib3.exceptions
 
 
 class Result(object):
@@ -13,6 +13,7 @@ class Result(object):
         self.init_res = {}
         self.last_res = {}
         self.res = {}
+        self.restart = 0
 
 
 def get_filebeat_data_and_save(url, fp, result, ip):
@@ -48,32 +49,40 @@ def get_filebeat_data_and_save(url, fp, result, ip):
             diff_uptime_ms = res['stats']['uptime_ms'] - result.init_res['stats']['uptime_ms']
             res['stats']['diff_uptime_sec'] = diff_uptime_ms / 1000.0
             if diff_uptime_ms < 0:
-                res['stats']['restart'] = (res['stats'].get('restart') or 0) + 1
+                result.restart = result.restart + 1
                 result.init_res = res
+                print("Error: 重启filebeat次数为:" + str(result.restart))
+                fp.write("Error: 重启filebeat次数为:" + str(result.restart) + "\n")
 
             diff_write_bytes = res['stats']['write_bytes'] - result.init_res['stats']['write_bytes']
             res['stats']['diff_write_bytes'] = diff_write_bytes
 
-            diff_time = now_time - result.init_res['timestamp']
-            res['stats']['diff_time'] = diff_time
+            run_times = now_time - result.init_res['timestamp']
+            res['stats']['run_times'] = run_times
 
             throughput = 0
-            if diff_time:
-                throughput = diff_write_bytes * 1.0 / diff_time
-            res['stats']['throughput'] = throughput
+            if run_times:
+                throughput = diff_write_bytes * 1.0 / run_times
+            res['stats']['throughput'] = throughput / 1024
         else:
             result.init_res = res
 
         if result.last_res:
             recent_time_diff = res['stats']['uptime_ms'] - result.last_res['stats']['uptime_ms']
-            if int(recent_time_diff / 1000):
+            if recent_time_diff / 1000:
                 recent_throughput = (res['stats']['write_bytes'] - result.last_res['stats']['write_bytes']) / (
                             recent_time_diff / 1000.0)
-                res['stats']['recent_throughput'] = recent_throughput
+                res['stats']['recent_throughput'] = recent_throughput / 1024
 
         result.last_res = res
+        result.res = res
         print(json.dumps(res, ensure_ascii=False, indent=4))
         json.dump(res, fp=fp, ensure_ascii=False, indent=4)
+        fp.write('\n')
+        fp.flush()
+    except (requests.exceptions.ConnectionError, urllib3.exceptions.NewConnectionError) as e:
+        print("ConnectionError:", e)
+        fp.write(str(e))
         fp.write('\n')
         fp.flush()
     except Exception as e:
@@ -89,12 +98,32 @@ if __name__ == '__main__':
         #     fp = open(output, "a+", encoding='utf-8')
         #     fps.append(fp)
         fp = open("filebeat.json", "a+", encoding='utf-8')
-        init_res_list = [Result(), Result(), Result()]
+        init_res_list = []
+        for i in range(len(urls)):
+            init_res_list.append(Result())
         ips = ['10.8.4.13', '10.8.4.43', '10.8.4.73']
         while True:
             for i in range(len(urls)):
                 get_filebeat_data_and_save(urls[i], fp, init_res_list[i], ips[i])
 
+            # 汇总各个filebeat的结果
+            all_recent_throughput = 0
+            all_throughput = 0
+            for i in range(len(urls)):
+                all_throughput = all_throughput + (init_res_list[i].res['stats'].get('throughput') or 0)
+                all_recent_throughput = all_recent_throughput + (init_res_list[i].res['stats'].get('recent_throughput') or 0)
+            all_result = {
+                'all_throughput': all_throughput,
+                'all_recent_throughput': all_recent_throughput
+            }
+            print(json.dumps(all_result, ensure_ascii=False, indent=4))
+            json.dump(all_result, fp=fp, ensure_ascii=False, indent=4)
+            fp.write('\n')
+            fp.flush()
             time.sleep(10)
     except Exception as e:
         print(traceback.format_exc())
+    finally:
+        if fp:
+            fp.flush()
+            fp.close()
