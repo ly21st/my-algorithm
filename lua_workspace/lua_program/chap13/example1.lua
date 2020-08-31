@@ -22,7 +22,7 @@ for i = 1, #s do
 end
 print('-------------------------')
 
-s = string.pack("s1", "hello")
+s = string.pack("c5", "hello")
 local i = 1
 local res
 local j = 1

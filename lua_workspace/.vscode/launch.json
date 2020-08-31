@@ -5,22 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug Lua Interpreter",
-            "type": "lua-local",
+            "name": "launch",
+            "type": "lua",
             "request": "launch",
-            "program": {
-                "lua": "lua",
-                "file": "${file}"
-            }
+            "stopOnEntry": true,
+            "program": "${workspaceFolder}/set2.lua",
+            "cwd": "${workspaceFolder}",
+            "path": "${workspaceFolder}/?.lua",
+            "cpath": "${workspaceFolder}/?.dll",
+            "arg": [],
+            "consoleCoding": "utf8"
         },
-        {
-            "name": "Debug Custom Lua Environment",
-            "type": "lua-local",
-            "request": "launch",
-            "program": {
-                "command": "command"
-            },
-            "args": []
-        }
     ]
 }
