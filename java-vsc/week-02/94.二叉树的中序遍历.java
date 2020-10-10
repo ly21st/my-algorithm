@@ -1,3 +1,9 @@
+import java.util.Deque;
+import java.util.LinkedList;
+
+import javax.swing.tree.TreeNode;
+
+
 /*
  * @lc app=leetcode.cn id=94 lang=java
  *
@@ -40,6 +46,36 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+
+// 效率高的迭代，但难以实现
+class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        helper(root, res);
+        return res;
+    }
+
+    public void helper(TreeNode root, List<Integer> res) {
+        if (root == null) return;
+        TreeNode p = root;  
+        Deque<TreeNode> deque = new LinkedList<>();
+        while (p != null || !deque.isEmpty()) {
+            while (p!= null) {
+                deque.addLast(p);
+                p = p.left;
+            }
+            p = deque.removeLast();
+            res.add(p.val);
+            p = p.right;
+        }
+
+    }
+}
+// @lc code=end
+
+
+
+// 递归方法
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
@@ -58,26 +94,75 @@ class Solution {
         }
     }
 }
-// @lc code=end
 
 
 
-// 递归方法
-// class Solution {
-//     public List<Integer> inorderTraversal(TreeNode root) {
-//         List<Integer> res = new ArrayList<>();
-//         helper(root, res);
-//         return res;
-//     }
+// 双色标记法
+class Solution {
+    class MyPair {
+        public TreeNode key;
+        public Integer val;
 
-//     public void helper(TreeNode root, List<Integer> res) {
-//         if (root == null) return;
-//         if (root.left != null) {
-//             helper(root.left, res);
-//         }
-//         res.add(root.val);
-//         if (root.right != null) {
-//             helper(root.right, res);
-//         }
-//     }
-// }
+        public MyPair(TreeNode key, Integer val) {
+            this.key = key;
+            this.val = val;
+        }
+    }
+
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        helper(root, res);
+        return res;
+    }
+
+    public void helper(TreeNode root, List<Integer> res) {
+        if (root == null) return;
+        TreeNode p = root;  
+        Deque<MyPair> deque = new LinkedList<>();
+        MyPair pair = new MyPair(root, 0);
+        deque.addLast(pair);
+
+        while (!deque.isEmpty()) {
+            pair = deque.removeLast();
+            TreeNode node = pair.key;
+            int v = pair.val;
+            if ((node.left == null && node.right == null) || v == 1) {
+                res.add(node.val);
+                continue;
+            }
+            if (node.right != null) {
+                deque.addLast(new MyPair(node.right, 0));
+            }
+            deque.addLast(new MyPair(node, 1));
+            if (node.left != null) {
+                deque.addLast(new MyPair(node.left, 0));
+            }
+        }
+    }
+}
+
+
+// 效率高的迭代，但难以实现
+class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        helper(root, res);
+        return res;
+    }
+
+    public void helper(TreeNode root, List<Integer> res) {
+        if (root == null) return;
+        TreeNode p = root;  
+        Deque<TreeNode> deque = new LinkedList<>();
+        while (p != null || !deque.isEmpty()) {
+            while (p!= null) {
+                deque.addLast(p);
+                p = p.left;
+            }
+            p = deque.removeLast();
+            res.add(p.val);
+            p = p.right;
+        }
+
+    }
+}
