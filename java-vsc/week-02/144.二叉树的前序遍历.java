@@ -48,6 +48,7 @@ import javax.swing.tree.TreeNode;
  *     TreeNode(int x) { val = x; }
  * }
  */
+// 莫里斯遍历
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
@@ -57,16 +58,25 @@ class Solution {
 
     public void helper(TreeNode root, List<Integer> res) {
         if (root == null) return;
-        Deque<TreeNode> deque = new LinkedList<>();
-        deque.addLast(root);
-        while (!deque.isEmpty()) {
-            TreeNode q = deque.removeLast();
-            res.add(q.val);
-            if (q.right != null) {
-                deque.addLast(q.right);
+        TreeNode node = root;
+        TreeNode pre;
+        while (node != null) {
+            if (node.left == null) {
+                res.add(node.val);
+                node = node.right;
+                continue;
             }
-            if (q.left != null) {
-                deque.addLast(q.left);
+            pre = node.left;
+            while (pre.right != null && pre.right != node) {
+                pre = pre.right;
+            }
+            if (pre.right == null) {
+                res.add(node.val);
+                pre.right = node;
+                node = node.left;
+            } else { 
+                node = node.right;
+                pre.right = null;
             }
         }
     }
@@ -120,3 +130,5 @@ class Solution {
         }
     }
 }
+
+
