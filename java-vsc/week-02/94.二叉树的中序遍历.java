@@ -47,7 +47,7 @@ import javax.swing.tree.TreeNode;
  * }
  */
 
-// 效率高的迭代，但难以实现
+// 莫里斯遍历
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
@@ -58,15 +58,26 @@ class Solution {
     public void helper(TreeNode root, List<Integer> res) {
         if (root == null) return;
         TreeNode p = root;  
-        Deque<TreeNode> deque = new LinkedList<>();
-        while (p != null || !deque.isEmpty()) {
-            while (p!= null) {
-                deque.addLast(p);
-                p = p.left;
+        TreeNode pre;
+        while (p != null) {
+            if (p.left == null) {
+                res.add(p.val);
+                p = p.right;
+                continue;
             }
-            p = deque.removeLast();
-            res.add(p.val);
-            p = p.right;
+            pre = p.left;
+            while (pre.right != null && pre.right != p) {
+                pre = pre.right;
+            }
+
+            if (pre.right == null) {
+                pre.right = p;
+                p = p.left;
+            } else {
+                res.add(p.val);
+                p = p.right;
+                pre.right = null;
+            }
         }
 
     }
