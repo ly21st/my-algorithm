@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.w3c.dom.Node;
@@ -55,6 +57,7 @@ class Node {
 };
 */
 
+// 迭代法
 class Solution {
     public List<Integer> preorder(Node root) {
         List<Integer> res = new ArrayList<>();
@@ -63,9 +66,14 @@ class Solution {
     }
     public void helper(Node root, List<Integer> res) {
         if (root == null) return;
-        res.add(root.val);
-        for (Node node : root.children) {
-            helper(node, res);
+        Deque<Node> deque = new LinkedList<>();
+        deque.addLast(root);
+        while (!deque.isEmpty()) {
+            root = deque.removeLast();
+            res.add(root.val);
+            for (int i = root.children.size() - 1; i >= 0; i--) {
+                deque.addLast(root.children.get(i));
+            }
         }
     }
 }
