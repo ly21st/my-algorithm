@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.PriorityQueue;
 import java.util.Set;
 
 /*
@@ -36,6 +37,41 @@ import java.util.Set;
  */
 
 // @lc code=start
+
+class Ugly {
+    static int []res = new int[1690];
+    public Ugly() {
+        int p2 = 0;
+        int p3 = 0;
+        int p5 = 0;
+        res[0] = 1;
+        for (int i = 1; i < 1690; i++) {
+            int min = Math.min(Math.min(res[p2] * 2, res[p3] * 3), res[p5] * 5);
+            res[i] = min;
+            if (min == res[p2] * 2) {
+                p2++;
+            }
+            if (min == res[p3] * 3) {
+                p3++;
+            }
+            if (min == res[p5] * 5) {
+                p5++;
+            }
+        }
+    }
+}
+
+class Solution {
+    static Ugly ugly = new Ugly();
+    public int nthUglyNumber(int n) {
+        return ugly.res[n - 1];
+    }
+}
+// @lc code=end
+
+
+
+// 暴力法
 class Solution {
     public int nthUglyNumber(int n) {
         Set<Integer> set = new HashSet<>();
@@ -72,5 +108,28 @@ class Solution {
         return false;
     }
 }
-// @lc code=end
 
+
+// 使用优先级堆
+class Solution {
+    static int []res = new int[1690];
+    public int nthUglyNumber(int n) {
+        int []arr = {2, 3, 5};
+        Set<Long> set = new HashSet<>();
+        PriorityQueue<Long> heap = new PriorityQueue<>();
+        heap.add(1L);
+        set.add(1L);
+        for (int i = 0; i < 1690; i++) {
+            long a = heap.poll();
+            res[i] = (int)a;
+            for (int j = 0; j < arr.length; j++) {
+                long k = a * arr[j];
+                if (!set.contains(k)) {
+                    set.add(k);
+                    heap.add(k);
+                }
+            }
+        }
+        return res[n - 1];
+    }
+}
