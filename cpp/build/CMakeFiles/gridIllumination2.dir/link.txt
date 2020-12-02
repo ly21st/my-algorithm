@@ -1,3 +1,0 @@
-"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E remove -f CMakeFiles\gridIllumination2.dir/objects.a
-"E:\Program Files\LLVM\bin\ar.exe" cr CMakeFiles\gridIllumination2.dir/objects.a @CMakeFiles\gridIllumination2.dir\objects1.rsp
-"E:\Program Files\LLVM\bin\x86_64-w64-mingw32-g++.exe" -g   -Wl,--whole-archive CMakeFiles\gridIllumination2.dir/objects.a -Wl,--no-whole-archive  -o gridIllumination2.exe -Wl,--out-implib,libgridIllumination2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\gridIllumination2.dir\linklibs.rsp

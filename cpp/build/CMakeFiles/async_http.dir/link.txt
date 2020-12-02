@@ -1,3 +1,0 @@
-"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E remove -f CMakeFiles\async_http.dir/objects.a
-"E:\Program Files\LLVM\bin\ar.exe" cr CMakeFiles\async_http.dir/objects.a @CMakeFiles\async_http.dir\objects1.rsp
-"E:\Program Files\LLVM\bin\x86_64-w64-mingw32-gcc.exe" -g   -Wl,--whole-archive CMakeFiles\async_http.dir/objects.a -Wl,--no-whole-archive  -o async_http.exe -Wl,--out-implib,libasync_http.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\async_http.dir\linklibs.rsp
