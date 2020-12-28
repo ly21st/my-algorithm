@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8389a16c-4f30-4eb3-816f-4fd6551b9f45" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="E:/maven/apache-maven-3.6.3-bin/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="E:\maven\apache-maven-3.6.3-bin\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1dIv1B6N5BIZA4hOUfx3w36BVud" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584083350814" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bigdata-logkeeper-apiserver" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\mygit\logkeeper-middleware-idea\myproj\src\main\java\org\apache\skywalking\apm\plugin\lymysql\define" />
+      <recent name="E:\mygit\logkeeper-middleware-idea\myproj\src\main\java\kafka\consumer" />
+      <recent name="E:\mygit\logkeeper-middleware-idea\myproj\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.HeapDemo2">
+    <configuration name="DiscardServer" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DiscardServer" />
+      <module name="myproj" />
+      <option name="PROGRAM_PARAMETERS" value="8888" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HeapDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="suanfa.heap.HeapDemo" />
+      <module name="my-proj" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="suanfa.heap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HeapDemo2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="suanfa.heap.HeapDemo2" />
+      <module name="my-proj" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="suanfa.heap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LambdaTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lambda.LambdaTest" />
+      <module name="my-proj" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lambda.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LambdaTest3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lambda.LambdaTest3" />
+      <module name="my-proj" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lambda.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="string.StringTest" />
+      <module name="my-proj" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="string.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.DiscardServer" />
+      <item itemvalue="Application.LambdaTest3" />
+      <item itemvalue="Application.LambdaTest" />
+      <item itemvalue="Application.StringTest" />
+      <item itemvalue="Application.HeapDemo" />
+      <item itemvalue="Application.HeapDemo2" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HeapDemo2" />
+        <item itemvalue="Application.HeapDemo" />
+        <item itemvalue="Application.StringTest" />
+        <item itemvalue="Application.LambdaTest" />
+        <item itemvalue="Application.LambdaTest3" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8389a16c-4f30-4eb3-816f-4fd6551b9f45" name="Default Changelist" comment="" />
+      <created>1548390777304</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1548390777304</updated>
+      <workItem from="1592311344418" duration="1896000" />
+      <workItem from="1594480715530" duration="501000" />
+      <workItem from="1594481232838" duration="4967000" />
+      <workItem from="1594517365382" duration="8882000" />
+      <workItem from="1596199885982" duration="598000" />
+      <workItem from="1596462263595" duration="570000" />
+      <workItem from="1602507637629" duration="597000" />
+      <workItem from="1602680501481" duration="598000" />
+      <workItem from="1602899129510" duration="5573000" />
+      <workItem from="1602984386572" duration="738000" />
+      <workItem from="1602986877314" duration="1771000" />
+      <workItem from="1603009307942" duration="599000" />
+      <workItem from="1603283719773" duration="2453000" />
+      <workItem from="1603888580701" duration="3261000" />
+      <workItem from="1604073599076" duration="710000" />
+      <workItem from="1604192973722" duration="2329000" />
+      <workItem from="1604318489238" duration="1194000" />
+      <workItem from="1604496083857" duration="595000" />
+      <workItem from="1604580073377" duration="1045000" />
+      <workItem from="1604929288140" duration="511000" />
+      <workItem from="1605186078045" duration="598000" />
+      <workItem from="1605317805938" duration="595000" />
+      <workItem from="1605403990418" duration="599000" />
+      <workItem from="1605536402341" duration="599000" />
+      <workItem from="1605618109681" duration="598000" />
+      <workItem from="1605701262375" duration="597000" />
+      <workItem from="1605789010175" duration="337000" />
+      <workItem from="1605882838544" duration="551000" />
+      <workItem from="1605920021099" duration="11142000" />
+      <workItem from="1606006003278" duration="2706000" />
+      <workItem from="1606136237396" duration="599000" />
+      <workItem from="1607738060943" duration="696000" />
+      <workItem from="1607825594126" duration="890000" />
+      <workItem from="1608035438395" duration="2328000" />
+      <workItem from="1608131761877" duration="598000" />
+      <workItem from="1609079068662" duration="326000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1605271536711">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605271536711" />
+    <state width="1877" height="255" key="GridCell.Tab.0.bottom" timestamp="1609170594263">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="255" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609170594263" />
+    <state width="1877" height="255" key="GridCell.Tab.0.center" timestamp="1609170594263">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="255" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609170594263" />
+    <state width="1877" height="255" key="GridCell.Tab.0.left" timestamp="1609170594263">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="255" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609170594263" />
+    <state width="1877" height="255" key="GridCell.Tab.0.right" timestamp="1609170594263">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="255" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609170594263" />
+    <state width="1877" height="400" key="GridCell.Tab.1.bottom" timestamp="1609161523579">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="400" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609161523579" />
+    <state width="1877" height="400" key="GridCell.Tab.1.center" timestamp="1609161523579">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="400" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609161523579" />
+    <state width="1877" height="400" key="GridCell.Tab.1.left" timestamp="1609161523579">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="400" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609161523579" />
+    <state width="1877" height="400" key="GridCell.Tab.1.right" timestamp="1609161523579">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="400" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609161523579" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/crazy/java/chap14/chap14_2/code01/MyTest.java</url>
+          <line>12</line>
+          <properties class="crazy.java.chap14.chap14_2.code01.MyTest" method="m1">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/javaexample/testpackage/TestMain.java</url>
+          <line>18</line>
+          <properties class="javaexample.testpackage.TestMain" method="main">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://H:/java_project/skywalking/skywalking.git.v6.3.0.ver4/apm-sniffer/apm-agent/src/main/java/org/apache/skywalking/apm/agent/SkyWalkingAgent.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/PlayWithCompiler/chap02/LexicalAnalysis.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/sort/MergeSort.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/http/MultiFormFile2.java</url>
+          <line>145</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/http/MultiFormFile2.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="args" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>myproj</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: ch.qos.logback:logback-classic:1.2.3</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="$PROJECT_DIR$" />
+    <option value="package assembly:single" />
+  </component>
+</project>
