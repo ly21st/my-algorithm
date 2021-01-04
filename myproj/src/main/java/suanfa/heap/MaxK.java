@@ -1,9 +1,6 @@
 package suanfa.heap;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.PriorityQueue;
+import java.util.*;
 
 /**
  * @description:查找最大的k个元素，
@@ -110,8 +107,14 @@ public class MaxK {
             }
         }
 
-        while (!pq.isEmpty()) {
-            System.out.printf("%d ", pq.poll());
+//        while (!pq.isEmpty()) {
+//            System.out.printf("%d ", pq.poll());
+//        }
+        Iterator iterator = pq.iterator();
+
+        while (iterator.hasNext())
+        {
+            System.out.print(iterator.next() + " ");
         }
         System.out.println();
     }
