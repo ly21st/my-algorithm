@@ -49,63 +49,158 @@ class Solution {
         Map<Integer, Integer> m = new HashMap<>();
         int n = nums.length;
         for (int i = 0; i < n; i++) {
-            int count = m.getOrDefault(nums[i], 0);
-            count++;
-            m.put(nums[i], count);
+            m.put(nums[i], m.getOrDefault(nums[i], 0) + 1);
         }
-        int []countArr = new int[m.size()];
-        int i = 0;
-        Map<Integer, List<Integer>> mReverse = new HashMap<>();
-        for (Map.Entry<Integer, Integer> e : m.entrySet()) {
-            List<Integer> li = mReverse.getOrDefault(e.getValue(), new ArrayList<Integer>());
-            li.add(e.getKey());
-            mReverse.put(e.getValue(), li);
-            countArr[i++] = e.getValue();
-        }
-        
-        // 获取频率最高的k个数
-        int []kFrequent = kMax(countArr, k);
         int []res = new int[k];
-        i = 0;
-        int count = 0;
-        Set<Integer> visited = new HashSet<>();
-        while (count < k) {
-            List<Integer> li = mReverse.get(kFrequent[i]);
-            int left = Math.min(k - count, li.size());
-            for (int j = 0; j < left; j++) {
-                int v = li.get(j);
-                if (!visited.contains(v)) {
-                    res[count++] = v;
-                    visited.add(v);
-                }
-            }
-            i++;
+        int [][]refCnt = new int[m.size()][2];
+        int i = 0;
+        for (Map.Entry<Integer, Integer> entry : m.entrySet()) {
+            refCnt[i++] = new int[]{entry.getKey(), entry.getValue()};
         }
-        
+
+        i = 0; 
+        int j = refCnt.length;
+        int left = k;
+        do {
+            int mid  = findMiddle(refCnt, left, i, j);
+            left = left - (mid - i);
+            i = mid;
+        } while (left > 0);
+        for (i = 0; i < k; i++) {
+            res[i] = refCnt[i][0];
+        } 
         return res;
+        
     }
 
-    public static int[] kMax(int []nums, int k) {
-        PriorityQueue<Integer> pq = new PriorityQueue<Integer>(); 
-        for (int i = 0; i < k; i++) {
-            pq.add(nums[i]);
+    public int findMiddle(int[][] nums, int k, int start, int end) {
+        if (k <= 0) {
+            return 0;
         }
-        int n = nums.length;
-        for (int i = k; i < n; i++ ) {
-            int v = pq.peek();
-            if (nums[i] > v) {
-                pq.poll();
-                pq.add(nums[i]);
+        if (end - start < k) {
+            return 0;
+        }
+        int i = start; 
+        int j = end - 1;
+        int v = nums[i][1];
+        while (i < j) {
+            if (nums[i][1] <= v) {
+                i++;
+            }
+            if (nums[j][1] > v) {
+                j--;
+            }
+            if (i < j) {
+                int []tmp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = tmp;
             }
         }
-        int []res = new int[k];
-        int i = 0;
-        Iterator<Integer> iterator = pq.iterator();
-        while (iterator.hasNext()) {
-            res[i++] = iterator.next();
-        }
-        return res;
+        return i;
     }
 }
 // @lc code=end
 
+
+/**
+ *  方法1
+ */
+
+// class Solution {
+//     public int[] topKFrequent(int[] nums, int k) {
+//         Map<Integer, Integer> m = new HashMap<>();
+//         int n = nums.length;
+//         for (int i = 0; i < n; i++) {
+//             int count = m.getOrDefault(nums[i], 0);
+//             count++;
+//             m.put(nums[i], count);
+//         }
+//         int []countArr = new int[m.size()];
+//         int i = 0;
+//         Map<Integer, List<Integer>> mReverse = new HashMap<>();
+//         for (Map.Entry<Integer, Integer> e : m.entrySet()) {
+//             List<Integer> li = mReverse.getOrDefault(e.getValue(), new ArrayList<Integer>());
+//             li.add(e.getKey());
+//             mReverse.put(e.getValue(), li);
+//             countArr[i++] = e.getValue();
+//         }
+        
+//         // 获取频率最高的k个数
+//         int []kFrequent = kMax(countArr, k);
+//         int []res = new int[k];
+//         i = 0;
+//         int count = 0;
+//         Set<Integer> visited = new HashSet<>();
+//         while (count < k) {
+//             List<Integer> li = mReverse.get(kFrequent[i]);
+//             int left = Math.min(k - count, li.size());
+//             for (int j = 0; j < left; j++) {
+//                 int v = li.get(j);
+//                 if (!visited.contains(v)) {
+//                     res[count++] = v;
+//                     visited.add(v);
+//                 }
+//             }
+//             i++;
+//         }
+        
+//         return res;
+//     }
+
+//     public static int[] kMax(int []nums, int k) {
+//         PriorityQueue<Integer> pq = new PriorityQueue<Integer>(); 
+//         for (int i = 0; i < k; i++) {
+//             pq.add(nums[i]);
+//         }
+//         int n = nums.length;
+//         for (int i = k; i < n; i++ ) {
+//             int v = pq.peek();
+//             if (nums[i] > v) {
+//                 pq.poll();
+//                 pq.add(nums[i]);
+//             }
+//         }
+//         int []res = new int[k];
+//         int i = 0;
+//         Iterator<Integer> iterator = pq.iterator();
+//         while (iterator.hasNext()) {
+//             res[i++] = iterator.next();
+//         }
+//         return res;
+//     }
+// }
+
+
+
+// 方法2
+// class Solution {
+//     public int[] topKFrequent(int[] nums, int k) {
+//         Map<Integer, Integer> m = new HashMap<>();
+//         int n = nums.length;
+//         for (int i = 0; i < n; i++) {
+//             m.put(nums[i], m.getOrDefault(nums[i], 0) + 1);
+//         }
+//         int []res = new int[k];
+//         PriorityQueue<int[]> refCnt = new PriorityQueue<>((int[]o1, int o2[]) -> {
+//             return o1[1] - o2[1];
+//         });
+//         for (Map.Entry<Integer, Integer> entry : m.entrySet()) {
+//             int num = entry.getKey();
+//             int count = entry.getValue();
+//             if (refCnt.size() < k) {
+//                 refCnt.add(new int[]{num, count});
+//                 continue;
+//             }
+//             int []v = refCnt.peek();
+//             if (v[1] < count) {
+//                 refCnt.poll();
+//                 refCnt.add(new int[]{num, count});
+//             }
+//         }
+//         for (int i = 0; i < k; i++) {
+//             res[i] = refCnt.poll()[0];
+//         }
+
+//         return res;
+//     }
+// }
