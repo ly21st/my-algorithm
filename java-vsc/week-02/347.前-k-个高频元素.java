@@ -48,10 +48,44 @@ class Solution {
     public int[] topKFrequent(int[] nums, int k) {
         Map<Integer, Integer> m = new HashMap<>();
         int n = nums.length;
-
+        for (int i = 0; i < n; i++) {
+            int count = m.getOrDefault(nums[i], 0);
+            count++;
+            m.put(nums[i], count);
+        }
+        int []countArr = new int[m.size()];
+        int i = 0;
+        Map<Integer, List<Integer>> mReverse = new HashMap<>();
+        for (Map.Entry<Integer, Integer> e : m.entrySet()) {
+            List<Integer> li = mReverse.getOrDefault(e.getValue(), new ArrayList<Integer>());
+            li.add(e.getKey());
+            mReverse.put(e.getValue(), li);
+            countArr[i++] = e.getValue();
+        }
+        
+        // 获取频率最高的k个数
+        int []kFrequent = kMax(countArr, k);
+        int []res = new int[k];
+        i = 0;
+        int count = 0;
+        Set<Integer> visited = new HashSet<>();
+        while (count < k) {
+            List<Integer> li = mReverse.get(kFrequent[i]);
+            int left = Math.min(k - count, li.size());
+            for (int j = 0; j < left; j++) {
+                int v = li.get(j);
+                if (!visited.contains(v)) {
+                    res[count++] = v;
+                    visited.add(v);
+                }
+            }
+            i++;
+        }
+        
+        return res;
     }
 
-    public static int[] kMax(Integer []nums, int k) {
+    public static int[] kMax(int []nums, int k) {
         PriorityQueue<Integer> pq = new PriorityQueue<Integer>(); 
         for (int i = 0; i < k; i++) {
             pq.add(nums[i]);
