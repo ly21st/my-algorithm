@@ -53,50 +53,57 @@ class Solution {
         }
         int []res = new int[k];
         int [][]refCnt = new int[m.size()][2];
+        int [][]merge= new int[k][2];
         int i = 0;
         for (Map.Entry<Integer, Integer> entry : m.entrySet()) {
             refCnt[i++] = new int[]{entry.getKey(), entry.getValue()};
         }
 
-        i = 0; 
-        int j = refCnt.length;
-        int left = k;
-        do {
-            int mid  = findMiddle(refCnt, left, i, j);
-            left = left - (mid - i);
-            i = mid;
-        } while (left > 0);
+        margeArr(refCnt, 0, refCnt.length - 1, k, merge, 0);
         for (i = 0; i < k; i++) {
-            res[i] = refCnt[i][0];
-        } 
+            res[i] = merge[i][0];
+        }
         return res;
-        
+
     }
 
-    public int findMiddle(int[][] nums, int k, int start, int end) {
-        if (k <= 0) {
-            return 0;
+    //
+    public void margeArr(int [][]nums, int begin, int end, int k, int [][]merge, int t) {
+        if (end <= begin) {
+            merge[t++] = nums[begin];
+            return;
         }
-        if (end - start < k) {
-            return 0;
+        int pivot = partition(nums, begin, end);
+        if ((pivot - begin) <= k) {
+            for (int i = begin; i < pivot; i++) {
+                merge[t++] = nums[i];
+            }
+            int count = pivot - begin;
+            if (count < k) {
+                merge[t++] = nums[pivot];
+                margeArr(nums, pivot + 1, end, k - count - 1, merge, t);
+            }
+        } else{
+            margeArr(nums, begin, pivot - 1, k, merge, t);
         }
-        int i = start; 
-        int j = end - 1;
-        int v = nums[i][1];
-        while (i < j) {
-            if (nums[i][1] <= v) {
-                i++;
-            }
-            if (nums[j][1] > v) {
-                j--;
-            }
-            if (i < j) {
-                int []tmp = nums[i];
-                nums[i] = nums[j];
-                nums[j] = tmp;
+    }
+
+    // 快速排序分区，最简洁的实现方法
+    public int partition(int [][]nums, int begin, int end) {
+        int pivot = end;
+        int count = begin;
+        for (int i = begin; i < end; i++) {
+            if (nums[i][1] > nums[pivot][1]) {
+                int []tmp = nums[count];
+                nums[count] = nums[i];
+                nums[i] = tmp;
+                count++;
             }
         }
-        return i;
+        int []tmp = nums[count];
+        nums[count] = nums[pivot];
+        nums[pivot] = tmp;
+        return count;
     }
 }
 // @lc code=end
