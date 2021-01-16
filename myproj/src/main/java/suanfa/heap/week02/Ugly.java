@@ -1,9 +1,5 @@
 package suanfa.heap.week02;
 
-import java.util.HashSet;
-import java.util.PriorityQueue;
-import java.util.Set;
-
 /**
  * @description:
  * @author: LiYuan
@@ -12,30 +8,29 @@ import java.util.Set;
  **/
 public class Ugly {
     static int maxN = 1690;
-    static int[] uglyArr = new int[maxN];
-    static Set<Long> visited = new HashSet<>();
+    int[] uglyArr = new int[maxN];
+
     public Ugly () {
-        PriorityQueue<Long> pq = new PriorityQueue<>();
-        pq.add(1L);
+        uglyArr[0] = 1;
+        int p2 = 0;
+        int p3 = 0;
+        int p5 = 0;
         int i = 1;
-        while (i <= maxN) {
-            long top = pq.poll();
-            uglyArr[i - 1] = (int)top;
-            i++;
-            if (!visited.contains(top * 2)) {
-                pq.add(top * 2);
-                visited.add(top * 2);
+        while (i < maxN) {
+            long min = Math.min(Math.min((long)uglyArr[p2] * 2, (long)uglyArr[p3] * 3), (long)uglyArr[p5] * 5);
+            if (min == (long)uglyArr[p2] * 2) {
+                p2++;
             }
-            if (!visited.contains(top * 3)) {
-                pq.add(top * 3);
-                visited.add(top * 3);
+            if (min == (long)uglyArr[p3] * 3) {
+                p3++;
             }
-            if (!visited.contains(top * 5)) {
-                pq.add(top * 5);
-                visited.add(top * 5);
+            if (min == (long)uglyArr[p5] * 5) {
+                p5++;
             }
+            uglyArr[i++] = (int)min;
         }
     }
+
     public int nthUglyNumber(int n) {
         for (int num : uglyArr) {
             System.out.printf("%d ", num);

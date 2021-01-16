@@ -37,34 +37,41 @@ import java.util.Set;
  */
 
 // @lc code=start
+// 使用最小堆的方法
+public class Ugly {
+    static int maxN = 1690;
+    int[] uglyArr = new int[maxN];
+    Set<Long> visited = new HashSet<>();
 
-class Ugly {
-    static int []res = new int[1690];
-    public Ugly() {
-        int p2 = 0;
-        int p3 = 0;
-        int p5 = 0;
-        res[0] = 1;
-        for (int i = 1; i < 1690; i++) {
-            int min = Math.min(Math.min(res[p2] * 2, res[p3] * 3), res[p5] * 5);
-            res[i] = min;
-            if (min == res[p2] * 2) {
-                p2++;
+    public Ugly () {
+        PriorityQueue<Long> pq = new PriorityQueue<>();
+        pq.add(1L);
+        int i = 1;
+        while (i <= maxN) {
+            long top = pq.poll();
+            uglyArr[i - 1] = (int)top;
+            i++;
+            if (!visited.contains(top * 2)) {
+                pq.add(top * 2);
+                visited.add(top * 2);
             }
-            if (min == res[p3] * 3) {
-                p3++;
+            if (!visited.contains(top * 3)) {
+                pq.add(top * 3);
+                visited.add(top * 3);
             }
-            if (min == res[p5] * 5) {
-                p5++;
+            if (!visited.contains(top * 5)) {
+                pq.add(top * 5);
+                visited.add(top * 5);
             }
         }
     }
+
 }
 
 class Solution {
     static Ugly ugly = new Ugly();
     public int nthUglyNumber(int n) {
-        return ugly.res[n - 1];
+        return ugly.uglyArr[n - 1];
     }
 }
 // @lc code=end
@@ -131,5 +138,38 @@ class Solution {
             }
         }
         return res[n - 1];
+    }
+}
+
+
+// p2表示使用过2因子的最大索引，p3表示使用过3因子的最大索引，p5表示使用过5因子的最大索引，
+// 使用因子3，那么因子2已经使用过了；使用因子5，那么因子2,3已经使用过了。
+class Ugly {
+    static int []res = new int[1690];
+    public Ugly() {
+        int p2 = 0;
+        int p3 = 0;
+        int p5 = 0;
+        res[0] = 1;
+        for (int i = 1; i < 1690; i++) {
+            int min = Math.min(Math.min(res[p2] * 2, res[p3] * 3), res[p5] * 5);
+            res[i] = min;
+            if (min == res[p2] * 2) {
+                p2++;
+            }
+            if (min == res[p3] * 3) {
+                p3++;
+            }
+            if (min == res[p5] * 5) {
+                p5++;
+            }
+        }
+    }
+}
+
+class Solution {
+    static Ugly ugly = new Ugly();
+    public int nthUglyNumber(int n) {
+        return ugly.res[n - 1];
     }
 }

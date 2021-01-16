@@ -41,24 +41,24 @@ import java.util.Map;
 
 // @lc code=start
 class Solution {
-        public List<List<String>> groupAnagrams(String[] strs) {
+    public List<List<String>> groupAnagrams(String[] strs) {
 
         List<List<String>> res = new ArrayList<>();
         if (strs.length == 0) {
             return res;
         }
-        Map<char[], List<String>> group = new HashMap<>();
+        Map<String, List<String>> group = new HashMap<>();
         for (String str : strs) {
             char []arr = str.toCharArray();
             Arrays.sort(arr);
-            System.out.printf("arr=%s\n", arr);
-            List<String> list = group.getOrDefault(arr, new ArrayList<String>());
+            String key = new String(arr);
+            List<String> list = group.getOrDefault(key, new ArrayList<String>());
             list.add(str);
-            group.put(arr, list);
+            group.put(key, list);
         }
-     
+    
 
-        for (Map.Entry<char[], List<String>> entry : group.entrySet()) {
+        for (Map.Entry<String, List<String>> entry : group.entrySet()) {
             res.add(entry.getValue());
         }
 
@@ -67,3 +67,5 @@ class Solution {
 }
 // @lc code=end
 
+
+// 映射方法
