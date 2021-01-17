@@ -4,7 +4,12 @@
     <option name="GROUP_BY_SEVERITY" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8389a16c-4f30-4eb3-816f-4fd6551b9f45" name="Default Changelist" comment="" />
+    <list default="true" id="8389a16c-4f30-4eb3-816f-4fd6551b9f45" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cpp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,10 +26,12 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="E:/maven/apache-maven-3.6.3-bin/apache-maven-3.6.3" />
         <option name="userSettingsFile" value="E:\maven\apache-maven-3.6.3-bin\apache-maven-3.6.3\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -35,20 +42,22 @@
     </option>
   </component>
   <component name="ProjectId" id="1dIv1B6N5BIZA4hOUfx3w36BVud" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584083350814" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bigdata-logkeeper-apiserver" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -57,7 +66,19 @@
       <recent name="E:\mygit\logkeeper-middleware-idea\myproj\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HeapDemo2">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Ugly">
     <configuration name="DiscardServer" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DiscardServer" />
       <module name="myproj" />
@@ -92,12 +113,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LambdaTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lambda.LambdaTest" />
+    <configuration name="KMaxFrequent" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="suanfa.heap.kmaxelement.KMaxFrequent" />
       <module name="my-proj" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lambda.*" />
+          <option name="PATTERN" value="suanfa.heap.kmaxelement.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -105,12 +126,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LambdaTest3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lambda.LambdaTest3" />
+    <configuration name="MaxK" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="suanfa.heap.MaxK" />
       <module name="my-proj" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lambda.*" />
+          <option name="PATTERN" value="suanfa.heap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,12 +139,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="string.StringTest" />
+    <configuration name="Ugly" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="suanfa.heap.week02.Ugly" />
       <module name="my-proj" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="string.*" />
+          <option name="PATTERN" value="suanfa.heap.week02.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,19 +154,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.DiscardServer" />
-      <item itemvalue="Application.LambdaTest3" />
-      <item itemvalue="Application.LambdaTest" />
-      <item itemvalue="Application.StringTest" />
       <item itemvalue="Application.HeapDemo" />
       <item itemvalue="Application.HeapDemo2" />
+      <item itemvalue="Application.MaxK" />
+      <item itemvalue="Application.KMaxFrequent" />
+      <item itemvalue="Application.Ugly" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Ugly" />
+        <item itemvalue="Application.KMaxFrequent" />
+        <item itemvalue="Application.MaxK" />
         <item itemvalue="Application.HeapDemo2" />
         <item itemvalue="Application.HeapDemo" />
-        <item itemvalue="Application.StringTest" />
-        <item itemvalue="Application.LambdaTest" />
-        <item itemvalue="Application.LambdaTest3" />
       </list>
     </recent_temporary>
   </component>
@@ -195,11 +216,30 @@
       <workItem from="1608035438395" duration="2328000" />
       <workItem from="1608131761877" duration="598000" />
       <workItem from="1609079068662" duration="326000" />
+      <workItem from="1609769877526" duration="2429000" />
+      <workItem from="1610259381527" duration="9320000" />
+      <workItem from="1610373629552" duration="1441000" />
+      <workItem from="1610461838789" duration="252000" />
+      <workItem from="1610763675725" duration="3448000" />
+      <workItem from="1610849871087" duration="1169000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1605271536711">
@@ -245,7 +285,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/crazy/java/chap14/chap14_2/code01/MyTest.java</url>
           <line>12</line>
-          <properties class="crazy.java.chap14.chap14_2.code01.MyTest" method="m1">
+          <properties class="crazy.java.chap14.chap14_2.code01.MyTest">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="1" />
@@ -253,7 +293,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/javaexample/testpackage/TestMain.java</url>
           <line>18</line>
-          <properties class="javaexample.testpackage.TestMain" method="main">
+          <properties class="javaexample.testpackage.TestMain">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="23" />
@@ -282,6 +322,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/http/MultiFormFile2.java</url>
           <line>118</line>
           <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/suanfa/heap/kmaxelement/KMaxFrequent.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

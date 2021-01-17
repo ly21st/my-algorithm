@@ -1,1 +1,0 @@
-gcc -g -o base64 main.c base64.c 
