@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -78,6 +79,62 @@ import javax.swing.tree.TreeNode;
  *     TreeNode(int x) { val = x; }
  * }
  */
+
+ // 深度优先算法
+public class Codec {
+
+    // Encodes a tree to a single string.
+    public String serialize(TreeNode root) {
+        String s = serializeHelper(root, "");
+        // System.out.printf("s:%s", s);
+        return s;
+    }
+
+    public String serializeHelper(TreeNode root, String str) {
+        if (root == null) {
+            return str + "null,";
+        }
+        String s = String.valueOf(root.val) + ",";
+        str = str + s;
+        str = str + serializeHelper(root.left, "");
+        str = str + serializeHelper(root.right, "");
+        return str;
+    }
+
+
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        if (data == null || data.equals("")) {
+            return null;
+        }
+        String[] strArr = data.split(",");
+        List<String> list = new LinkedList<>(Arrays.asList(strArr));
+        return deserializeHelper(list);
+    }
+
+    public TreeNode deserializeHelper(List<String> list) {
+        if (list.size() == 0) {
+            return null;
+        }
+        if (list.get(0).equals("null")) {
+            list.remove(0);
+            return null;
+        }
+        TreeNode root = new TreeNode(Integer.valueOf(list.get(0)));
+        list.remove(0);
+        root.left = deserializeHelper(list);
+        root.right = deserializeHelper(list);
+        return root;
+    }
+}
+// Your Codec object will be instantiated and called as such:
+// Codec ser = new Codec();
+// Codec deser = new Codec();
+// TreeNode ans = deser.deserialize(ser.serialize(root));
+// @lc code=end
+
+
+// 广度优先算法
 public class Codec {
 
     // Encodes a tree to a single string.
@@ -156,10 +213,3 @@ public class Codec {
         return root;
     }
 }
-
-// Your Codec object will be instantiated and called as such:
-// Codec ser = new Codec();
-// Codec deser = new Codec();
-// TreeNode ans = deser.deserialize(ser.serialize(root));
-// @lc code=end
-
