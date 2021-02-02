@@ -37,6 +37,37 @@ import java.util.List;
 // @lc code=start
 class Solution {
     public List<List<Integer>> combine(int n, int k) {
+        List<Integer> output = new ArrayList<>();
+        List<List<Integer>> res = new ArrayList<>();
+        int []arr = new int[n];
+        for (int i = 0; i < n; i++ ) {
+            arr[i] = i + 1;
+        }
+        helper(n, k, arr, res, output, 0);
+        return res;
+    }
+    public void helper(int n, int k, int[] arr, List<List<Integer>> res, 
+        List<Integer> output, int i){
+        if (output.size() == k) {
+            List<Integer> list = new ArrayList<>(output);
+            res.add(list);
+            return;
+        }
+        if (n - (i - 1) < k - output.size()) {
+            return;
+        }
+
+        output.add(arr[i]);
+        helper(n, k, arr, res, output, i + 1);
+        output.remove(output.size() - 1);
+        helper(n, k, arr, res, output, i + 1);
+    }
+}
+// @lc code=end
+
+
+class Solution {
+    public List<List<Integer>> combine(int n, int k) {
         ArrayList<Integer> output = new ArrayList<>();
         List<List<Integer>> res = new ArrayList<>();
         int []arr = new int[n];
@@ -62,5 +93,3 @@ class Solution {
         }
     }
 }
-// @lc code=end
-
