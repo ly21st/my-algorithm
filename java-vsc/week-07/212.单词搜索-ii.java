@@ -82,6 +82,105 @@ class Solution {
     }
 
     public void searchWord(char[][] board, int m, int n, Trie trie, int x, int y, StringBuffer output, Set<String> set) {
+        if (board[x][y] == '#') {
+            return;
+        }
+        char c = board[x][y];
+        output.append(c);
+        board[x][y] = '#';
+        String outputStr = output.toString();
+        Trie node = trie.find(outputStr);
+        if (node != null && node.end) {
+            set.add(outputStr);
+        }
+        if (node != null) {
+            if (y + 1 < n) {
+                searchWord(board, m, n, trie, x, y + 1, output, set);
+            }
+            if (y - 1 >= 0) {
+                searchWord(board, m, n, trie, x, y - 1, output, set);
+            }
+            if (x - 1 >= 0) {
+                searchWord(board, m, n, trie, x - 1, y, output, set);
+            }
+            if (x + 1 < m) {
+                searchWord(board, m, n, trie, x + 1, y, output, set);
+            }
+        }
+        int len = output.length();
+        output.delete(len - 1, len);
+        board[x][y] = c;
+    }
+}
+
+class Trie {
+    boolean end;
+    Trie []tries;
+
+    /** Initialize your data structure here. */
+    public Trie() {
+        tries = new Trie[26];
+    }
+    
+    /** Inserts a word into the trie. */
+    public void insert(String word) {
+        char []sArr = word.toCharArray();
+        Trie node = this;
+        for (char c : sArr) {
+            if (node.tries[c - 'a'] == null) {
+                node.tries[c - 'a'] = new Trie();
+            }
+            node = node.tries[c - 'a'];
+        }
+        node.end = true;
+    }
+
+    public Trie find(String word) {
+        char []sArr = word.toCharArray();
+        Trie node = this;
+        for (char c : sArr) {
+            node = node.tries[c - 'a'];
+            if (node == null) {
+                break;
+            }
+        }
+        return node;
+    }
+}
+
+
+// @lc code=end
+
+
+// 俺的实现，回溯法+前缀树
+
+class Solution {
+    public List<String> findWords(char[][] board, String[] words) {
+        int m = board.length;
+        if (m == 0) {
+            return new ArrayList<>();
+        }
+        int n = board[0].length;
+        if (n == 0) {
+            return new ArrayList<>();
+        }
+        if (words.length == 0) {
+            return new ArrayList<>();
+        }
+        Trie trie = new Trie();
+        for (String word : words) {
+            trie.insert(word);
+        }
+        Set<String> set = new HashSet<>();
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                searchWord(board, m, n, trie, i, j, new StringBuffer(), set);
+            }
+        }
+        return new ArrayList<String>(set);
+    }
+
+    public void searchWord(char[][] board, int m, int n, Trie trie, int x, int y, StringBuffer output, Set<String> set) {
         if (!(x >= 0 && x < m)) {
             return;
         }
@@ -164,5 +263,3 @@ class Trie {
         return node;
     }
 }
-// @lc code=end
-
