@@ -73,32 +73,75 @@ class Solution {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] == '1') {
-                    dfs(grid, m, n, i, j);
                     count++;
                 }
             }
         }
+        UnionFound uf = new UnionFound(m * n, count);
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == '1') {
+                    grid[i][j] = '0';
+                    if (i - 1 >= 0 && grid[i - 1][j] == '1') {
+                        uf.union(i * n + j, (i - 1) * n + j);
+                    }
+                    if (i + 1 < m && grid[i + 1][j] == '1') {
+                        uf.union(i * n + j, (i + 1) * n + j);
+                    }
+                    if (j - 1 >= 0 && grid[i][j - 1] == '1') {
+                        uf.union(i * n + j, i * n + j - 1);
+                    }
+                    if (j + 1 < n && grid[i][j + 1] == '1') {
+                        uf.union(i * n + j, i * n + j + 1);
+                    }
+                }
+            }
+        }
+        return uf.getCount();
+    }
+
+}
+
+class UnionFound {
+    int count; 
+    int []parent;
+    int []rank;
+
+    public UnionFound(int n, int cn) {
+        count = cn;
+        parent = new int[n];
+        rank = new int[n];
+        for (int i = 0; i < n; i++) {
+            parent[i] = i;
+        }
+    }
+
+    public int find(int i) {
+        if (i != parent[i]) {
+            parent[i] = find(parent[i]);
+        }
+        return parent[i];
+    }
+
+    public void union(int p, int q) {
+        int rootx = find(p);
+        int rooty = find(q);
+        if (rank[rootx] < rank[rooty]) {
+            parent[rootx] = rooty;
+        } else if (rank[rootx] > rank[rooty]) {
+            parent[rooty] = rootx;
+        } else {
+            rank[rootx] += 1;
+            parent[rooty] = rootx;
+        }
+        count--;
+    }
+
+    public int getCount() {
         return count;
     }
 
-    public void dfs(char[][] grid, int m, int n, int x, int y) {
-        if (grid[x][y] == '0') {
-            return;
-        }
-        grid[x][y] = '0';
-        if (x - 1 >= 0) {
-            dfs(grid, m, n, x - 1, y);
-        }
-        if (x + 1 < m) {
-            dfs(grid, m, n, x + 1, y);
-        }
-        if (y - 1 >= 0) {
-            dfs(grid, m, n, x, y - 1);
-        }
-        if (y + 1 < n) {
-            dfs(grid, m, n, x, y + 1);
-        }
-    }
 }
 // @lc code=end
 
