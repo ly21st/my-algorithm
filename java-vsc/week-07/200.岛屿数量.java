@@ -69,16 +69,8 @@ class Solution {
         if (n == 0) {
             return 0;
         }
-        int count = 0;
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                if (grid[i][j] == '1') {
-                    count++;
-                }
-            }
-        }
-        UnionFound uf = new UnionFound(m * n, count);
-
+        
+        UnionFound uf = new UnionFound(grid);
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] == '1') {
@@ -108,12 +100,19 @@ class UnionFound {
     int []parent;
     int []rank;
 
-    public UnionFound(int n, int cn) {
-        count = cn;
-        parent = new int[n];
-        rank = new int[n];
-        for (int i = 0; i < n; i++) {
-            parent[i] = i;
+    public UnionFound(char[][] grid) {
+        int m = grid.length;
+        int n = grid[0].length;
+        parent = new int[m * n];
+        rank = new int[m * n];
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == '1') {
+                    parent[i * n + j] = i * n + j;
+                    count++;
+                }
+            }
         }
     }
 
@@ -127,15 +126,17 @@ class UnionFound {
     public void union(int p, int q) {
         int rootx = find(p);
         int rooty = find(q);
-        if (rank[rootx] < rank[rooty]) {
-            parent[rootx] = rooty;
-        } else if (rank[rootx] > rank[rooty]) {
-            parent[rooty] = rootx;
-        } else {
-            rank[rootx] += 1;
-            parent[rooty] = rootx;
+        if (rootx != rooty) {
+            if (rank[rootx] < rank[rooty]) {
+                parent[rootx] = rooty;
+            } else if (rank[rootx] > rank[rooty]) {
+                parent[rooty] = rootx;
+            } else {
+                rank[rootx] += 1;
+                parent[rooty] = rootx;
+            }
+            count--;
         }
-        count--;
     }
 
     public int getCount() {

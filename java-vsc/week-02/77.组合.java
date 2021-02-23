@@ -58,7 +58,7 @@ class Solution {
         }
         for (int j = i; j < n; j++) {
             // 剪枝，当可选的剩余个数少于要填充的k个数，则提前退出
-            if (n - (j - 1) < k - output.size()) {
+            if (n - j < k - output.size()) {
                 break;
             }
             output.add(arr[j]);
