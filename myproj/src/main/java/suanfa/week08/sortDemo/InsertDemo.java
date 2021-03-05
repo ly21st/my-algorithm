@@ -12,7 +12,8 @@ import lombok.extern.slf4j.Slf4j;
 public class InsertDemo {
     public static void main(String[] args) {
         int[] arr = {30, 60, 10, 50, 90, 70, 40, 20, 80, 100, 60, 40};
-        sort(arr);
+//        sort(arr);
+        sort2(arr);
         log.info("arr:{}", arr);
     }
 
@@ -29,6 +30,21 @@ public class InsertDemo {
                 }
             }
             arr[j + 1] = tmp;
+        }
+    }
+
+    public static void sort2(int []arr) {
+        int n = arr.length;
+        for (int i = 1; i < n; i++) {
+            for (int j = i; j > 0; j--) {
+                if (arr[j - 1] > arr[j]) {
+                    int tmp = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = tmp;
+                } else {
+                    break;
+                }
+            }
         }
     }
 }

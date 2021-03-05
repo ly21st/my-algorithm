@@ -18,7 +18,7 @@ public class SelectDemo {
 
     public static void sort(int[] arr) {
         int n = arr.length;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n - 1; i++) {
             int minIndex = i;
             int min = arr[minIndex];
             for (int j = i + 1; j < n; j++) {

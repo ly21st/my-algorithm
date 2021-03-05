@@ -12,7 +12,9 @@ import lombok.extern.slf4j.Slf4j;
 public class ShellDemo {
     public static void main(String[] args) {
         int[] arr = {30, 60, 10, 50, 90, 70, 40, 20, 80, 100, 60, 40};
-        sort(arr);
+//        sort(arr);
+//        sort2(arr);
+        sort3(arr);
         log.info("arr:{}", arr);
     }
 
@@ -33,6 +35,50 @@ public class ShellDemo {
                     }
 
                     arr[k + factor] = tmp;
+                }
+            }
+            factor /= 2;
+        }
+    }
+
+    public static void sort2(int[] arr) {
+        int n = arr.length;
+        int factor = n / 2;
+        while (factor > 0) {
+            for (int i = 0; i < factor; i++) {
+                for (int j = i + factor; j < n; j += factor) {
+                    for (int k = j - factor; k >= 0; k -= factor) {
+                        if (arr[k] > arr[k + factor]) {
+                            int tmp = arr[k];
+                            arr[k] = arr[k + factor];
+                            arr[k + factor] = tmp;
+                        } else {
+                            break;
+                        }
+                    }
+                }
+            }
+            factor /= 2;
+        }
+    }
+
+
+
+    public static void sort3(int[] arr) {
+        int n = arr.length;
+        int factor = n / 2;
+        while (factor > 0) {
+            for (int i = 0; i < factor; i++) {
+                for (int j = i + factor; j < n; j += factor) {
+                    for (int k = j; k > i; k -= factor) {
+                        if (arr[k - factor] > arr[k]) {
+                            int tmp = arr[k];
+                            arr[k] = arr[k - factor];
+                            arr[k - factor] = tmp;
+                        } else {
+                            break;
+                        }
+                    }
                 }
             }
             factor /= 2;
