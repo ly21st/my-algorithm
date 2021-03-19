@@ -21,7 +21,7 @@ cryptography==2.9.2
 cssselect==1.1.0
 cycler==0.10.0
 decorator==4.4.2
-Django==2.2.12
+Django==2.2.18
 dominate==2.5.1
 fake-useragent==0.1.11
 Flask==1.1.1
