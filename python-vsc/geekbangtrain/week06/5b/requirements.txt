@@ -10,7 +10,7 @@ colorama==0.4.3
 constantly==15.1.0
 cryptography==2.9.2
 cssselect==1.1.0
-Django==2.2.13
+Django==2.2.20
 fake-useragent==0.1.11
 hyperlink==19.0.0
 idna==2.9
