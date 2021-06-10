@@ -15,7 +15,7 @@ constantly==15.1.0
 cryptography==2.9.2
 cssselect==1.1.0
 cycler==0.10.0
-Django==2.2.13
+Django==2.2.24
 django-celery==3.3.1
 fake-useragent==0.1.11
 future==0.18.2
