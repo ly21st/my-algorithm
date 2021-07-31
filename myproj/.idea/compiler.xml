@@ -8,10 +8,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="my-proj" />
-        <module name="myproj" />
+        <module name="apm-agent" />
         <module name="apm-agent (2)" />
         <module name="apm-mysql-commons" />
-        <module name="apm-agent" />
+        <module name="myproj" />
       </profile>
       <profile name="Annotation profile for apm-agent" enabled="true">
         <sourceOutputDir name="../../target/generated-sources/annotations" />
